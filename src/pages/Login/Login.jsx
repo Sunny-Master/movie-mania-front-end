@@ -30,7 +30,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate('/')
+      navigate('/profiles/profile')
     } catch (err) {
       console.log(err)
       setMessage(err.message)
