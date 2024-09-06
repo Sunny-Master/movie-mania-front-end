@@ -1,5 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 // services
 import * as profileService from '../../services/profileService'
@@ -26,7 +27,9 @@ const Profiles = () => {
     <main className={styles.container}>
       <h1>Hello. This is a list of all the profiles.</h1>
       {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
+        <NavLink key={profile._id} to={`/profiles/${profile._id}`}>
+          <p>{profile.name}</p>
+        </NavLink>
       ))}
     </main>
   )
