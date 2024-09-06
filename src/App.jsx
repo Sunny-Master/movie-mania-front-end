@@ -12,6 +12,7 @@ import Profile from './pages/Profile/Profile'
 import NewMovieCon from './pages/NewMovieCon/NewMovieCon'
 import AddFavorites from './pages/AddFavorites/AddFavorites'
 import Recommendations from './pages/Recommendations/Recommendations'
+import MovieCons from './pages/MovieCons/MovieCons'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -95,6 +96,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <Recommendations />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movieConcepts"
+          element={
+            <ProtectedRoute user={user}>
+              <MovieCons />
             </ProtectedRoute>
           }
         />
