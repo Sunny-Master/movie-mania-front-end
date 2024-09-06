@@ -13,6 +13,7 @@ import NewMovieCon from './pages/NewMovieCon/NewMovieCon'
 import AddFavorites from './pages/AddFavorites/AddFavorites'
 import Recommendations from './pages/Recommendations/Recommendations'
 import MovieCons from './pages/MovieCons/MovieCons'
+import MovieConShow from './pages/MovieConShow/MovieConShow'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -104,6 +105,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <MovieCons />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movieConcepts/show"
+          element={
+            <ProtectedRoute user={user}>
+              <MovieConShow />
             </ProtectedRoute>
           }
         />
