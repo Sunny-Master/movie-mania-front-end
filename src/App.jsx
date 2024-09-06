@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Profile from './pages/Profile/Profile'
+import NewMovieCon from './pages/NewMovieCon/NewMovieCon'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -68,6 +69,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <Profile user={user}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movieConcepts/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewMovieCon />
             </ProtectedRoute>
           }
         />
