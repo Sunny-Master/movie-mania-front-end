@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Profile from './pages/Profile/Profile'
 import NewMovieCon from './pages/NewMovieCon/NewMovieCon'
+import AddFavorites from './pages/AddFavorites/AddFavorites'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -77,6 +78,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <NewMovieCon />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addFavorites"
+          element={
+            <ProtectedRoute user={user}>
+              <AddFavorites />
             </ProtectedRoute>
           }
         />
