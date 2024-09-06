@@ -19,8 +19,6 @@ const Profile = (props) => {
     fetchProfile()
   }, [profileId])
 
-  if (!profile) return <h1>Loading...</h1>
-  
   return (  
     <h1>Welcome to your Profile! {profile.name}</h1>
   )
