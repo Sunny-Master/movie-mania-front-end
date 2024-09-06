@@ -86,7 +86,7 @@ function App() {
           }
         />
         <Route
-          path="/addFavorites"
+          path="/profiles/:profileId/addFavorites"
           element={
             <ProtectedRoute user={user}>
               <AddFavorites />
