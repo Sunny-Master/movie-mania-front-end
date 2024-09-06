@@ -11,11 +11,17 @@ import TextField from '@mui/material/TextField'
 import styles from './SearchForm.module.css'
 
 const SearchForm = (props) => {
-  const [formData, setFormData] = useState({query: ''})
+  const [formData, setFormData] = useState({name: ''})
 
   const handleChange = event => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
   }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    props.searchCelebs(formData)
+  }
+
 
   return (  
     <div className="App">
@@ -26,14 +32,14 @@ const SearchForm = (props) => {
         sx={{ width: "50%" }}
       >
         <Paper elevation={4} sx={{ width: "100%", p: "1rem" }}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <TextField
               autoComplete="off"
               margin="normal"
               fullWidth
               required
               type="text"
-              name="query"
+              name="name"
               label="Search for Celeb"
               value={formData.query}
               onChange={handleChange}
