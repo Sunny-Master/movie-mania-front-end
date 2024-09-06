@@ -14,6 +14,7 @@ import AddFavorites from './pages/AddFavorites/AddFavorites'
 import Recommendations from './pages/Recommendations/Recommendations'
 import MovieCons from './pages/MovieCons/MovieCons'
 import MovieConShow from './pages/MovieConShow/MovieConShow'
+import EditMovieCon from './pages/EditMovieCon/EditMovieCon'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -113,6 +114,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <MovieConShow />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movieConcepts/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditMovieCon />
             </ProtectedRoute>
           }
         />
