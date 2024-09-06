@@ -1,7 +1,26 @@
+// npm modules
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+
+// services
+import * as profileService from '../../services/profileService'
+
 const Profile = (props) => {
-  const { user } = props
+  const [profile, setProfile] = useState(null)
+  const { profileId } = useParams()
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      // make an API call to get users profile
+      const profileData = await profileService.show(profileId)
+      // use result to set state
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [profileId])
+
   return (  
-    <h1>Welcome to your Profile, {user.name}!</h1>
+    <h1>Welcome to your Profile! {profile.name}</h1>
   )
 }
 
