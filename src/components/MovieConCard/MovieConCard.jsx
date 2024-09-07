@@ -1,10 +1,13 @@
-//npm modules
-import { NavLink } from "react-router-dom"
+// CSS
+import styles from './MovieConCard.module.css'
 
-const MovieConCard = () => {
-  return ( 
-    <h1>Here are the containers for concept details</h1>
+const MovieConCard = ({ content }) => {
+
+  return (
+    <h1>Did I do that?</h1>
   )
 }
+
+
 
 export default MovieConCard
