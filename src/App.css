@@ -24,11 +24,12 @@ body {
 
 a,
 a:visited {
-  color: #00d8ff
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 nav > ul {
   margin: 0;
   padding: 16px 32px;
 }
-
