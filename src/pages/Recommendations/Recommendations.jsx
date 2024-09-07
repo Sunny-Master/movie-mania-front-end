@@ -6,6 +6,7 @@ import * as tmdbService from '../../services/tmdbService'
 
 // components
 import SearchForm from "../../components/SearchForm/SearchForm"
+import MovieCard from "../../components/MovieCard/MovieCard"
 
 const Recommendations = () => {
   const [movies, setMovies] = useState(null)
@@ -19,6 +20,9 @@ const Recommendations = () => {
     <>
       <h1>Movie Recommendations</h1>
       <SearchForm searchResults={searchMovies} type='movie'/>
+      {movies?.map(movie => 
+        <MovieCard key={movie.movieId} content={movie} />
+      )}
     </>
     
   )
