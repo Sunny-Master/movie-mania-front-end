@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -22,12 +22,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState(null)
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -39,6 +41,17 @@ function App() {
   const handleAuthEvt = () => {
     setUser(authService.getUser())
   }
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (!user) return
+      // make an API call to get users profile
+      const profileData = await profileService.show(user.profile)
+      // use result to set state
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [user])
 
   return (
     <>
@@ -70,10 +83,10 @@ function App() {
           }
         />
         <Route
-          path="/profiles/:profileId"
+          path="/my-profile"
           element={
             <ProtectedRoute user={user}>
-              <Profile user={user}/>
+              <Profile profile={profile}/>
             </ProtectedRoute>
           }
         />
@@ -86,10 +99,10 @@ function App() {
           }
         />
         <Route
-          path="/profiles/:profileId/addFavorites"
+          path="/addFavorites"
           element={
             <ProtectedRoute user={user}>
-              <AddFavorites />
+              <AddFavorites profile={profile}/>
             </ProtectedRoute>
           }
         />
@@ -97,7 +110,7 @@ function App() {
           path="/recommendations"
           element={
             <ProtectedRoute user={user}>
-              <Recommendations />
+              <Recommendations profile={profile}/>
             </ProtectedRoute>
           }
         />
