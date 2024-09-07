@@ -26,6 +26,8 @@ const Profile = () => {
     <>
       <h1>Welcome to your Profile! {profile.name}</h1>
       <NavLink to={`/profiles/${profileId}/addFavorites`}>Add Favorites</NavLink>
+      <NavLink to={`/recommendations`}>Movie Recommendations</NavLink>
+
     </>
     
   )

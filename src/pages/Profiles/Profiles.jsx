@@ -30,6 +30,7 @@ const Profiles = () => {
         <NavLink key={profile._id} to={`/profiles/${profile._id}`}>
           <p>{profile.name}</p>
         </NavLink>
+        
       ))}
     </main>
   )
