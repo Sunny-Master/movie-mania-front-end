@@ -11,8 +11,8 @@ async function getCelebs(formData) {
       },
     })
     return await res.json()
-  } catch (err) {
-    throw new Error(err)
+  } catch (error) {
+    throw new Error(error)
   }
 }
 
@@ -24,12 +24,26 @@ async function getMovies(formData) {
       },
     })
     return await res.json()
-  } catch (err) {
-    throw new Error(err)
+  } catch (error) {
+    throw new Error(error)
+  }
+}
+
+async function getRecommendations() {
+  try {
+    const res = await fetch(`${BASE_URL}/recommendations`, {
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}` 
+      },
+    })
+    return await res.json()
+  } catch (error) {
+    throw new Error(error)
   }
 }
 
 export {
   getCelebs,
   getMovies,
+  getRecommendations
 }
