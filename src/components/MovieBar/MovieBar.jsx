@@ -17,4 +17,4 @@ const MovieBar = ({ content }) => {
   )
 }
 
-export default MovieBar;
+export default MovieBar

@@ -33,3 +33,7 @@ nav > ul {
   margin: 0;
   padding: 16px 32px;
 }
+
+.inline {
+  display: inline;
+}

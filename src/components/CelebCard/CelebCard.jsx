@@ -2,7 +2,6 @@
 import styles from './CelebCard.module.css'
 
 const CelebCard = ({ content }) => {
-  console.log(content.imageUrl)
   return (
     <>
       <div className={styles.flipCard}>
@@ -11,9 +10,14 @@ const CelebCard = ({ content }) => {
             <img src={content.imageUrl} alt={content.name}  />
           </div>
           <div className={styles.flipCardBack}>
-            <h1>Name: {content.name}</h1>
-            <h2>Skill: {content.skill}</h2>
-            <h2>Known for: {content.knownFor.map(movie => movie)}</h2>
+            <div className='inline'>{content.name}</div>
+            <div className={styles.cardData}>
+              <label>Skill: </label>
+              <p className='inline'>{content.skill}</p>
+            </div>
+            <div>Known for: {content.knownFor.map((movie, idx) => 
+              <p key={idx}>{movie}</p>)}</div>
+              <button className='addCeleb'>+</button>
           </div>
         </div>
       </div>
