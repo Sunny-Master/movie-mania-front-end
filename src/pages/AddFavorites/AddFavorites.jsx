@@ -3,7 +3,7 @@ import { useState } from "react"
 
 //components
 import SearchForm from "../../components/SearchForm/SearchForm"
-import CelebCard from "../../components/CelebCard/CelebCard"
+import CelebBar from "../../components/CelebBar/CelebBar"
 
 // services
 import * as tmdbService from '../../services/tmdbService'
@@ -20,9 +20,7 @@ const AddFavorites = () => {
     <>
       <h1>Add favorites!!!!</h1>
       <SearchForm searchResults={searchCelebs} type='celeb'/>
-      {celebs?.map(celeb => 
-        <CelebCard key={celeb.celebId} content={celeb} />
-      )}
+      <CelebBar content={celebs} />
     </>
   )
 }
