@@ -12,7 +12,6 @@ const MovieConShow = (props) => {
   const [movieCon, setMovieCon] = useState(null)
   const { movieConId } = useParams()
   const { user } = props
-
   useEffect(() => {
     const fetchMovieCon = async() => {
       // make an API call to getch movieCon
@@ -22,7 +21,8 @@ const MovieConShow = (props) => {
     } 
     fetchMovieCon()
   }, [movieConId])
-
+  
+  if (!movieCon) return <h1>Loading...</h1>
   return ( 
     <MovieConView movieCon={movieCon} user={user}/>
   )
