@@ -1,7 +1,12 @@
+//components
+import AuthorInfo from '../../components/AuthorInfo/AuthorInfo'
+
 // css
 import styles from './MovieConView.module.css'
 
-const MovieConView = () => {
+const MovieConView = (props) => {
+  const { movieCon } = props
+
   return ( 
     <>
     <main>
