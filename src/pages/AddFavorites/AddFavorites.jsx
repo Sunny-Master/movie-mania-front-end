@@ -11,7 +11,7 @@ import * as tmdbService from '../../services/tmdbService'
 // css
 import styles from './AddFavorites.module.css'
 
-const AddFavorites = () => {
+const AddFavorites = ({ profile, handleAddActor }) => {
   const [celebs, setCelebs] = useState(null)
 
   const searchCelebs = async (formData) => {
@@ -23,7 +23,9 @@ const AddFavorites = () => {
     <main className={styles.container}>
       <h1>Add Favorites</h1>
       <SearchForm searchResults={searchCelebs} type='celeb'/>
-      <CelebBar content={celebs} />
+      <CelebBar content={celebs} handleAddActor={ handleAddActor }/>
+      <CelebBar content={profile.favActors}/>
+      
     </main>
   )
 }
