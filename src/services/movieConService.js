@@ -9,6 +9,16 @@ async function index() {
   }
 }
 
+async function show(movieConId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${movieConId}`)
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
+  show,
 }
