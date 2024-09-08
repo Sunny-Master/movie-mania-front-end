@@ -79,6 +79,13 @@ function App() {
     navigate('/add-favorites')
   }
 
+  const handleAddGenre = async (genreData) => {
+    const favGenresData = await profileService.addGenre(genreData)
+    // setProfile()
+    setProfile({...profile, favGenres: favGenresData})
+    navigate('/add-favorites')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -121,8 +128,12 @@ function App() {
           path="/add-favorites"
           element={
             <ProtectedRoute user={user}>
-              <AddFavorites profile={profile} handleAddActor={handleAddActor}
-              handleAddDirector={handleAddDirector}/>
+              <AddFavorites 
+                profile={profile} 
+                handleAddActor={handleAddActor}
+                handleAddDirector={handleAddDirector}
+                handleAddGenre={handleAddGenre}
+              />
             </ProtectedRoute>
           }
         />
