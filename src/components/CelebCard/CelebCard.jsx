@@ -1,7 +1,7 @@
 // CSS
 import styles from './CelebCard.module.css'
 
-const CelebCard = ({ content, handleAddActor }) => {
+const CelebCard = ({ content, handleAddActor, handleAddDirector }) => {
   return (
     <>
       <div className={styles.flipCard}>
@@ -18,7 +18,7 @@ const CelebCard = ({ content, handleAddActor }) => {
             <div className={styles.movies}>Movies</div>
             <div> {content.knownFor.map((movie, idx) => 
               <p key={idx}>{movie}</p>)}</div>
-              {handleAddActor ?
+              {handleAddActor ? 
                 <>
                   <button 
                     className={styles.addActor} 
@@ -26,7 +26,11 @@ const CelebCard = ({ content, handleAddActor }) => {
                   >
                     +A
                   </button>
-                  <button className={styles.addDirector}>+D</button>
+                  <button className={styles.addDirector}
+                  onClick={() => handleAddDirector(content)}
+                  >
+                    +D
+                  </button>
                 </>
                 :
                 <></>

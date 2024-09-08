@@ -72,6 +72,13 @@ function App() {
     navigate('/add-favorites')
   }
 
+  const handleAddDirector = async (celebData) => {
+    const favDirectorsData = await profileService.addDirector(celebData)
+    // setProfile()
+    setProfile({...profile, favDirectors: favDirectorsData})
+    navigate('/add-favorites')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -114,7 +121,8 @@ function App() {
           path="/add-favorites"
           element={
             <ProtectedRoute user={user}>
-              <AddFavorites profile={profile} handleAddActor={handleAddActor}/>
+              <AddFavorites profile={profile} handleAddActor={handleAddActor}
+              handleAddDirector={handleAddDirector}/>
             </ProtectedRoute>
           }
         />
