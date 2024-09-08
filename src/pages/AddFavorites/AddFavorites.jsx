@@ -8,6 +8,9 @@ import CelebBar from "../../components/CelebBar/CelebBar"
 // services
 import * as tmdbService from '../../services/tmdbService'
 
+// css
+import styles from './AddFavorites.module.css'
+
 const AddFavorites = () => {
   const [celebs, setCelebs] = useState(null)
 
@@ -17,11 +20,11 @@ const AddFavorites = () => {
   }
   
   return (  
-    <>
-      <h1>Add favorites!!!!</h1>
+    <main className={styles.container}>
+      <h1>Add Favorites</h1>
       <SearchForm searchResults={searchCelebs} type='celeb'/>
       <CelebBar content={celebs} />
-    </>
+    </main>
   )
 }
 
