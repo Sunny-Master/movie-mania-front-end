@@ -18,10 +18,16 @@ const MovieConCard = ({ content }) => {
           </span>
           <AuthorInfo content={content} />
         </header>
-        {content.genres.map( (genre, idx) => 
-          <p key={idx}>{content.genres}</p>
-        )}
-        <p>{content.plot}</p>
+        <section className={styles.data}>
+          <label>Genres: </label>
+          {content.genres.map((genre, idx) => 
+            <h4 key={idx}>{genre}</h4>
+          )}
+        </section>
+        <section className={styles.data}>
+          <label>Plot: </label>
+          <p>{content.plot}</p>
+        </section>
       </article>
     </NavLink>
   )

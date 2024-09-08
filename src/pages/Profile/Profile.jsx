@@ -10,10 +10,10 @@ const Profile = ({profile}) => {
 
   return (  
     <main className={styles.container}>
-      <h1>Welcome to your Profile! {profile.name}</h1>
+      <h1>{profile.name}'s Dashboard</h1>
       <section>
-        <NavLink to={`/addFavorites`}><button>Add Favorites</button></NavLink>
-        <NavLink to={`/recommendations`}><button>Movie Recommendations</button></NavLink>
+        <NavLink to={`/add-favorites`}><button>Favorites</button></NavLink>
+        <NavLink to={`/recommendations`}><button>Recommendations</button></NavLink>
       </section>
     </main>
   )

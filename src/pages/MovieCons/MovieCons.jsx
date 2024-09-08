@@ -1,6 +1,12 @@
-const MovieCons = () => {
+// components
+import MovieConBar from "../../components/MovieConBar/MovieConBar"
+
+// css
+import styles from './MovieCons.module.css'
+
+const MovieCons = ({movieCons}) => {
   return (  
-    <h1>Check out other movie concepts</h1>
+    <MovieConBar movieCons={movieCons}/>
   )
 }
 

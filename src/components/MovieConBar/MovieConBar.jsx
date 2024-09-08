@@ -1,6 +1,16 @@
-const MovieConBar = () => {
+// components
+import MovieConCard from "../MovieConCard/MovieConCard"
+
+// css
+import styles from './MovieConBar.module.css'
+
+const MovieConBar = ({movieCons}) => {
   return (  
-    <h1>Movie Concept Bar</h1>
+    <main className={styles.container}>
+    {movieCons.map(movieCon => 
+      <MovieConCard content={movieCon} key={movieCon._id} />
+    )}
+  </main>
   )
 }
 
