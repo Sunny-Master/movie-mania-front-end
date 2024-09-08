@@ -9,8 +9,8 @@
 /* This container is needed to position the front and back side */
 .flipCardInner {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 185px;
+  height: 250px;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -52,4 +52,18 @@
 img {
   width: 185px;
   height: 250px;
+}
+
+.addFav {
+  position: absolute;
+  border-radius: 30px;
+  margin-right: 80%;
+  margin-top: 120%;
+}
+
+.addWatch {
+  position: absolute;
+  border-radius: 30px;
+  margin-left: 80%;
+  margin-top: 120%;
 }
