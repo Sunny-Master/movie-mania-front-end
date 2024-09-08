@@ -23,6 +23,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as profileService from './services/profileService'
+import * as movieConService from './services/movieConService'
 
 // styles
 import './App.css'
@@ -31,16 +32,17 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [profile, setProfile] = useState(null)
   const navigate = useNavigate()
+  const [movieCons, setMovieCons] = useState([])
 
-  const handleLogout = () => {
-    authService.logout()
-    setUser(null)
-    navigate('/')
-  }
-
-  const handleAuthEvt = () => {
-    setUser(authService.getUser())
-  }
+  useEffect(() => {
+    const fetchMovieCons = async () => {
+      // make an API call to get MovieCons
+      const movieConsData = await movieConService.index()
+      // use result to set state
+      setMovieCons(movieConsData)
+    }
+    fetchMovieCons()
+  }, [user])
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -52,6 +54,18 @@ function App() {
     }
     fetchProfile()
   }, [user])
+
+  const handleLogout = () => {
+    authService.logout()
+    setUser(null)
+    navigate('/')
+  }
+
+  const handleAuthEvt = () => {
+    setUser(authService.getUser())
+  }
+
+
 
   return (
     <>
@@ -83,23 +97,16 @@ function App() {
           }
         />
         <Route
-          path="/my-profile"
+          path="/dashboard"
           element={
             <ProtectedRoute user={user}>
               <Profile profile={profile}/>
             </ProtectedRoute>
           }
         />
+        
         <Route
-          path="/movieConcepts/new"
-          element={
-            <ProtectedRoute user={user}>
-              <NewMovieCon />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/addFavorites"
+          path="/add-favorites"
           element={
             <ProtectedRoute user={user}>
               <AddFavorites profile={profile}/>
@@ -115,23 +122,27 @@ function App() {
           }
         />
         <Route
-          path="/movieConcepts"
+          path="/movieCons"
           element={
-            <ProtectedRoute user={user}>
-              <MovieCons />
-            </ProtectedRoute>
+              <MovieCons movieCons={movieCons}/>
           }
         />
         <Route
-          path="/movieConcepts/show"
+          path="/movieCons/:movieConId"
           element={
-            <ProtectedRoute user={user}>
               <MovieConShow />
+          }
+        />
+        <Route
+          path="/movieCons/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewMovieCon />
             </ProtectedRoute>
           }
         />
         <Route
-          path="/movieConcepts/edit"
+          path="/movieCons/edit"
           element={
             <ProtectedRoute user={user}>
               <EditMovieCon />
