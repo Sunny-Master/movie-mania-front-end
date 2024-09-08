@@ -10,14 +10,16 @@ const CelebCard = ({ content }) => {
             <img src={content.imageUrl} alt={content.name}  />
           </div>
           <div className={styles.flipCardBack}>
-            <div className='inline'>{content.name}</div>
+            <div className={styles.name}>{content.name}</div>
             <div className={styles.cardData}>
-              <label>Skill: </label>
-              <p className='inline'>{content.skill}</p>
+              <label className={styles.skill}>Known for: </label>
+              <p className={styles.skills}>{content.skill}</p>
             </div>
-            <div>Known for: {content.knownFor.map((movie, idx) => 
+            <div className={styles.movies}>Movies</div>
+            <div> {content.knownFor.map((movie, idx) => 
               <p key={idx}>{movie}</p>)}</div>
-              <button className='addCeleb'>+</button>
+              <button className={styles.addCeleb}>+</button>
+              <button className={styles.addDirector}>+</button>
           </div>
         </div>
       </div>

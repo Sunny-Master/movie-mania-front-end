@@ -11,10 +11,12 @@ const MovieCard = ({ content }) => {
             <img src={content.imageUrl} alt={content.title}  />
           </div>
           <div className={styles.flipCardBack}>
-            <h1>Title: {content.title}</h1>
-            <h2>Rating: {content.rating}</h2>
-            <h2>Release Date: {content.releaseDate}</h2>
-            <h2>Plot: {content.plot}</h2>
+            <h1 className={styles.title}>Title: {content.title}</h1>
+            <div className={styles.rating}>Rating: {content.rating}</div><br />
+            <div className={styles.date}>Release Date: {content.releaseDate}</div><br />
+            <div className={styles.plot}>Plot: {content.plot}</div>
+            <button className={styles.addFav}>+</button>
+            <button className={styles.addWatch}>+</button>
           </div>
         </div>
       </div>

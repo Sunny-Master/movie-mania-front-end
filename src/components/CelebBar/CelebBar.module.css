@@ -1,11 +1,11 @@
 .scroll {
-  margin: 2.5% 0;
-  padding: 0 9%;
+  margin: 3%;
+  padding: 0%;
   width: 80%;
   display: flex;
   justify-content: flex-start;
-  height: 300px;
+  height: fit-content;
   overflow-x: hidden;
   overflow-x: scroll;
-  gap: 200px;
+  gap: 25%;
 }
