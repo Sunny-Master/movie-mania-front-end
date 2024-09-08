@@ -42,3 +42,9 @@
 p {
   margin: 5%;
 }
+
+.data {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
