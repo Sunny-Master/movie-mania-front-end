@@ -130,7 +130,7 @@ function App() {
         <Route
           path="/movieCons/:movieConId"
           element={
-              <MovieConShow />
+              <MovieConShow user={user}/>
           }
         />
         <Route
