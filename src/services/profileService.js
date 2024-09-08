@@ -77,10 +77,27 @@ async function addDirector(celebData) {
   }
 }
 
+async function addGenre(genreData) {
+  try {
+    const res = await fetch(`${BASE_URL}/add-genre`, {
+      method: "PUT",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(genreData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
   show,
   addActor,
-  addDirector
+  addDirector,
+  addGenre,
 }
