@@ -13,10 +13,8 @@ const MovieConCard = ({ content }) => {
     <NavLink to={`/movieCons/${content._id}`}>
       <article className={styles.container}>
         <header>
-          <span>
-            <h1>{content.title}</h1>
-          </span>
           <AuthorInfo content={content} />
+          <h1 className={styles.title}>{content.title}</h1>
         </header>
         <section className={styles.data}>
           <label>Genres: </label>
@@ -25,8 +23,8 @@ const MovieConCard = ({ content }) => {
           )}
         </section>
         <section className={styles.data}>
-          <label>Plot: </label>
-          <p>{content.plot}</p>
+          <label>Cast: </label>
+          <p>{content.actors}</p>
         </section>
       </article>
     </NavLink>
