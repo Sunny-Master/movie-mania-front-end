@@ -1,0 +1,44 @@
+.header {
+  border-style: solid;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.bottom {
+  border-style: solid;
+  height: 400px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.plot {
+  border-style: solid;
+  width: 50%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.credits {
+  border-style: solid;
+  width: 30%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.header2 {
+  border-style: solid;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+p {
+  margin: 5%;
+}
