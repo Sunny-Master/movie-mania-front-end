@@ -65,7 +65,12 @@ function App() {
     setUser(authService.getUser())
   }
 
-
+  const handleAddActor = async (celebData) => {
+    const favActorsData = await profileService.addActor(celebData)
+    // setProfile()
+    setProfile({...profile, favActors: favActorsData})
+    navigate('/add-favorites')
+  }
 
   return (
     <>
@@ -109,7 +114,7 @@ function App() {
           path="/add-favorites"
           element={
             <ProtectedRoute user={user}>
-              <AddFavorites profile={profile}/>
+              <AddFavorites profile={profile} handleAddActor={handleAddActor}/>
             </ProtectedRoute>
           }
         />
