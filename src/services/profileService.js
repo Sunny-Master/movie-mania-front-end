@@ -61,9 +61,26 @@ async function addActor(celebData) {
   }
 }
 
+async function addDirector(celebData) {
+  try {
+    const res = await fetch(`${BASE_URL}/add-director`, {
+      method: "PUT",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(celebData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
   show,
   addActor,
+  addDirector
 }
