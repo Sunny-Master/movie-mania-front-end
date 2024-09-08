@@ -16,7 +16,6 @@ import styles from './AddFavorites.module.css'
 
 const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGenre }) => {
   const [celebs, setCelebs] = useState(null)
-  const [formData, setFormData] = useState({})
 
   const searchCelebs = async (formData) => {
       const celebsData = await tmdbService.getCelebs(formData)
