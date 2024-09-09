@@ -8,7 +8,7 @@ const EditMovieCon = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleAddMovieCon(formData)
+    props.handleUpdateMovieCon(formData)
   }
 
   const handleChange = evt => {
