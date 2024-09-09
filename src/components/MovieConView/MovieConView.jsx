@@ -16,7 +16,7 @@ const MovieConView = (props) => {
           
           <h1> {movieCon.author.name}'s "{movieCon.title}"</h1>
           <section className={styles.data}>
-            A {movieCon.genres.map((genre, idx) => 
+            The {movieCon.genres.map((genre, idx) => 
               <h4 key={idx}>{genre}</h4>
             )} Film
           </section>
@@ -49,7 +49,7 @@ const MovieConView = (props) => {
           <section className={styles.header}>
             <h1> {movieCon.author.name}'s "{movieCon.title}" Directed by {movieCon.director}</h1>
             <section className={styles.data}>
-              A {movieCon.genres.map((genre, idx) => 
+              The {movieCon.genres.map((genre, idx) => 
                 <h4 key={idx}>{genre}</h4>
               )} Film
             </section>

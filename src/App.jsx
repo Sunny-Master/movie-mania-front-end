@@ -106,6 +106,13 @@ function App() {
     navigate('/movieCons')
   }
 
+  const handleUpdateMovieCon = async (formData) => {
+    // const updatedBlog <-- This is where we'll put our update service function
+    const updatedMovieCon = await movieConService.update(formData)
+    setMovieCons(movieCons.map(movieCon => updatedMovieCon._id === movieCon._id ? updatedMovieCon : movieCon))
+    navigate('/movieCons')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -198,7 +205,7 @@ function App() {
           path="/movieCons/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditMovieCon profile={profile}/>
+              <EditMovieCon profile={profile} handleUpdateMovieCon={handleUpdateMovieCon}/>
             </ProtectedRoute>
           }
         />
