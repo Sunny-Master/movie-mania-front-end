@@ -27,9 +27,19 @@ const Recommendations = ({ profile, handleAddMovie}) => {
     fetchRecommendations()
   },[])
 
+  if (!movies) 
+    return (
+      <main className={styles.container}>
+        <h1>Movie Recommendations</h1><br />
+        <SearchForm searchResults={searchMovies} type='movie'/><br />
+        <h1>Loading Your Personalized Movies</h1>
+        <MovieBar content={profile.favMovies} />
+      </main>
+  )
+
   return (  
     <main className={styles.container}>
-      <h1>Movie Recommendations</h1>
+      <h1>Movie Recommendations</h1><br />
       <SearchForm searchResults={searchMovies} type='movie'/>
       <MovieBar content={movies} handleAddMovie={handleAddMovie}/>
       <h1>Favorite Movies</h1>

@@ -3,6 +3,10 @@
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  height: 85px;
+  background-color: #3d3151;
 }
 
 .top {
@@ -18,18 +22,12 @@
   margin-right: 10%;
 }
 
-.plot {
-  border-style: solid;
-  width: 50%;
-  margin-left: 5%;
-  text-align: center;
-}
-
 .credits {
   border-style: solid;
   width: 30%;
   margin-right: 5%;
   text-align: center;
+  background-color: #3d3151;
 }
 
 .header2 {
@@ -37,6 +35,10 @@
   text-align: center;
   margin-left: 30%;
   margin-right: 30%;
+  position: relative;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #3d3151;
 }
 
 p {
@@ -47,4 +49,28 @@ p {
   display: flex;
   align-items: center;
   gap: 1rem;
+  justify-content: center;
+}
+
+h1 {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.plot {
+  text-align: center;
+  border-style: solid;
+  width: 50%;
+  margin-left: 5%;
+  height: 250px;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  background-color: #3d3151;
+}
+
+.bottom {
+  overflow-y: hidden;
+  overflow-y: scroll;
+  height: 375px;
+  background-color: #3d3151;
 }

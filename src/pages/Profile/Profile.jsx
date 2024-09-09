@@ -10,7 +10,7 @@ const Profile = ({profile}) => {
 
   return (  
     <main className={styles.container}>
-      <h1>{profile.name}'s Dashboard</h1>
+      <h1>{profile.name}'s Dashboard</h1><br />
       <section>
         <NavLink to={`/add-favorites`}><button>Favorites</button></NavLink>
         <NavLink to={`/recommendations`}><button>Recommendations</button></NavLink>

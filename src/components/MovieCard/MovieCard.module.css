@@ -4,6 +4,7 @@
   width: 185px;
   height: 250px;
   perspective: 1000px;
+  margin-top: 2%;
 }
 
 /* This container is needed to position the front and back side */
@@ -38,19 +39,23 @@
 .flipCardFront {
   background-color: #bbbbbb;
   color: black;
+  border-radius: 10px;
 }
 
 /* Style the back side */
 .flipCardBack {
-  background-color: rgba(30, 143, 255, 0.87);
+  background-color: #3d3151;
   color: white;
   transform: rotateY(180deg);
-  font-size: .5rem;
+  font-size: .55rem;
+  width: 100%;
+  border-radius: 10px;
 }
 
 img {
   width: 185px;
   height: 250px;
+  border-radius: 10px;
 }
 
 .addFav {
@@ -65,4 +70,8 @@ img {
   border-radius: 30px;
   margin-left: 70%;
   margin-top: 120%;
+}
+
+.rating, .date, .plot {
+  font-weight: bold;
 }

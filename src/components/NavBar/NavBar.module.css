@@ -7,8 +7,13 @@
   position: fixed; 
   padding: 14px 21px;
   align-items: center;
-  background: white;
+  background-color: #3d3151;
+  color: whitesmoke;
   border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.navlink {
+  color: whitesmoke;
 }
 
 .container img {
@@ -25,6 +30,11 @@
   justify-content: flex-end;
 }
 
+.header {
+  font-size: 28px;
+  text-align: left;
+}
+
 .container li {
   margin-left: 35px;
   text-align: right;
@@ -37,4 +47,9 @@
   .container li {
     font-size: 15px;
   }
+}
+
+img {
+  background: black;
+  height: fit-content;
 }
