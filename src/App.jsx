@@ -100,6 +100,12 @@ function App() {
     navigate('/recommendations')
   }
 
+  const handleAddMovieCon = async (movieConFormData) => {
+    const newMovieCon = await movieConService.create(movieConFormData)
+    setMovieCons([newMovieCon, ...movieCons])
+    navigate('/movieCons')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -166,7 +172,9 @@ function App() {
         <Route
           path="/movieCons"
           element={
-              <MovieCons movieCons={movieCons}/>
+              <MovieCons 
+                movieCons={movieCons}
+              />
           }
         />
         <Route
@@ -179,7 +187,10 @@ function App() {
           path="/movieCons/new"
           element={
             <ProtectedRoute user={user}>
-              <NewMovieCon />
+              <NewMovieCon 
+                profile={profile} 
+                handleAddMovieCon={handleAddMovieCon}
+              />
             </ProtectedRoute>
           }
         />

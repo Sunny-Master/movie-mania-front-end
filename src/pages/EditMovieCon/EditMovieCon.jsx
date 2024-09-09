@@ -1,23 +1,18 @@
-// npm modules 
-import { useState } from "react";
+import { useState } from "react"
 import { useLocation } from "react-router-dom";
-
-// css
-import styles from './EditMovieCon.module.css'
 
 const EditMovieCon = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
-
-  const handleChange = (evt) => {
-    setFormData({...formData, [evt.target.name]: evt.target.value })
-  }
-
   const { profile } = props
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleUpdateMovieCon(formData)
+    props.handleAddMovieCon(formData)
+  }
+
+  const handleChange = evt => {
+    setFormData({...formData, [evt.target.name]: evt.target.value})
   }
 
   const handleSelectChange = evt => {
@@ -25,6 +20,8 @@ const EditMovieCon = (props) => {
     const selectedValues = Array.from(options).filter(option => option.selected).map(option => option.value)
     setFormData({...formData, [name]: selectedValues })
   }
+
+  if (!profile) return <h1>Loading...</h1>
 
   return (  
     <main >
@@ -41,8 +38,7 @@ const EditMovieCon = (props) => {
           onChange={handleChange}
         />
         <label htmlFor="plot-input">Plot</label>
-				<textarea
-          required
+        <textarea
           type="text"
           name="plot"
           id="plot-input"
@@ -61,14 +57,13 @@ const EditMovieCon = (props) => {
         >
         <option value="">Select Genre</option>
         {profile.favGenres.map(genre => 
-          <option key={genre._id} value={genre}>
+          <option key={genre._id} value={genre.genreName}>
             {genre.genreName}
           </option>
         )}
         </select>
         <label htmlFor="actors-input">Actors</label>
         <select
-          required
           multiple
           name="actors"
           id="actors-input"
@@ -77,14 +72,13 @@ const EditMovieCon = (props) => {
         >
         <option value="">Select Actors</option>
         {profile.favActors.map(actor => 
-          <option key={actor._id} value={actor}>
+          <option key={actor._id} value={actor.name}>
             {actor.name}
           </option>
         )}
         </select>
         <label htmlFor="director-input">Director</label>
         <select
-          required
           name="director"
           id="director-input"
           value={formData.director}
@@ -92,7 +86,7 @@ const EditMovieCon = (props) => {
         >
         <option value="">Select Director</option>
         {profile.favDirectors.map(director => 
-          <option key={director._id} value={director}>
+          <option key={director._id} value={director.name}>
             {director.name}
           </option>
         )}
@@ -103,4 +97,4 @@ const EditMovieCon = (props) => {
   )
 }
 
-export default EditMovieCon;
+export default EditMovieCon
