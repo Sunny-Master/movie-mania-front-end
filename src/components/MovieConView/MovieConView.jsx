@@ -1,5 +1,6 @@
 //components
 import NewComment from '../NewComment/NewComment'
+import Comments from '../Comments/Comments'
 
 // css
 import styles from './MovieConView.module.css'
@@ -46,6 +47,7 @@ const MovieConView = (props) => {
       <h1 className={styles.header2}>Comments</h1>
       <NewComment handleAddComment={handleAddComment}/>
       <section className={styles.bottom}>
+        <Comments comments={movieCon.comments} user={props.user} />
       </section>
     </main>
     </> 
