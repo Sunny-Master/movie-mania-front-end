@@ -8,7 +8,7 @@ const MovieBar = ({ content, handleAddMovie, handleAddToWatchList }) => {
   return ( 
     <>
       <div className={styles.scroll}>
-          {content?.map(movie => 
+          {content.map(movie => 
             <MovieCard 
               key={movie.movieId} 
               content={movie}
