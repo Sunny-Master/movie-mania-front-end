@@ -179,7 +179,7 @@ function App() {
           path="/movieCons/new"
           element={
             <ProtectedRoute user={user}>
-              <NewMovieCon />
+              <NewMovieCon profile={profile} />
             </ProtectedRoute>
           }
         />
