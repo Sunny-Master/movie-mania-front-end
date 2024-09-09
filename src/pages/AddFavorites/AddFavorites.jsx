@@ -35,7 +35,7 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
 
   return (  
     <main className={styles.container}>
-      <h1>Add Favorites</h1>
+      <h1>Add Favorites</h1><br />
       <SearchForm searchResults={searchCelebs} type='celeb'/>
       <CelebBar content={celebs} handleAddActor={ handleAddActor } handleAddDirector={ handleAddDirector } />
       <h1>Favorite Actors</h1>
@@ -49,7 +49,7 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
             {genre.name}
           </option>
         )}
-      </select>
+      </select><br />
       <section>
         <h1>Favorite Genres </h1>
         {profile.favGenres.map(genre => 
