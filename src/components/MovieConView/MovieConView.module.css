@@ -5,7 +5,8 @@
   margin-right: 10%;
   margin-top: 2%;
   margin-bottom: 2%;
-  height: 80px;
+  height: 85px;
+  background-color: #3d3151;
 }
 
 .top {
@@ -26,6 +27,7 @@
   width: 30%;
   margin-right: 5%;
   text-align: center;
+  background-color: #3d3151;
 }
 
 .header2 {
@@ -36,6 +38,7 @@
   position: relative;
   margin-top: 2%;
   margin-bottom: 2%;
+  background-color: #3d3151;
 }
 
 p {
@@ -62,10 +65,12 @@ h1 {
   height: 250px;
   overflow-y: hidden;
   overflow-y: scroll;
+  background-color: #3d3151;
 }
 
 .bottom {
   overflow-y: hidden;
   overflow-y: scroll;
   height: 375px;
+  background-color: #3d3151;
 }
