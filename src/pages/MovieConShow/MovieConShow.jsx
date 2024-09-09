@@ -21,6 +21,13 @@ const MovieConShow = (props) => {
     } 
     fetchMovieCon()
   }, [movieConId])
+
+  const handleAddComment = async commentFormData => {
+    // make an API call using servcie function
+    const newComment = await movieConService.createComment(movieConId, commentFormData)
+    // set state with the result
+    setMovieCon({ ...movieCon, comments: [...movieCon.comments, newComment] })
+  }
   
   if (!movieCon) return <h1>Loading...</h1>
   return ( 
@@ -31,7 +38,7 @@ const MovieConShow = (props) => {
       <button onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
       </>
     } 
-    <MovieConView movieCon={movieCon} user={user}/>
+    <MovieConView movieCon={movieCon} user={user} handleAddComment={handleAddComment}/>
     </>
   )
 }
