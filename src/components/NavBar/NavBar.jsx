@@ -6,7 +6,9 @@ import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
+    <>
     <nav className={styles.container}>
+      <h1 className={styles.header}>Movie Mania</h1>
       {user ?
         <ul>
           <li><NavLink to="/movieCons">MovieCons</NavLink></li>
@@ -23,6 +25,7 @@ const NavBar = ({ user, handleLogout }) => {
         </ul>
       }
     </nav>
+    </>
   )
 }
 

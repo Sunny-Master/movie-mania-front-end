@@ -42,20 +42,23 @@
 .flipCardFront {
   background-color: #bbbbbb;
   color: black;
+  border-radius: 10px;
 }
 
 /* Style the back side */
 .flipCardBack {
-  background-color: dodgerblue;
+  background-color: #3d3151;
   color: white;
   transform: rotateY(180deg);
   font-size: 0.85rem;
   width: 100%;
+  border-radius: 10px;
 }
 
 img {
   width: 185px;
-  height: 250px;
+  height: 200px;
+  border-radius: 10px;
 }
 
 .cardData {

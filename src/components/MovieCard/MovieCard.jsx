@@ -14,7 +14,7 @@ const MovieCard = ({ content }) => {
             <h1 className={styles.title}>Title: {content.title}</h1>
             <div className={styles.rating}>Rating: {content.rating}</div><br />
             <div className={styles.date}>Release Date: {content.releaseDate}</div><br />
-            <div className={styles.plot}>Plot: {content.plot}</div>
+            <div className={styles.plot}>{content.plot}</div>
             <button className={styles.addFav}>+</button>
             <button className={styles.addWatch}>+</button>
           </div>
