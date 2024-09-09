@@ -86,6 +86,14 @@ function App() {
     navigate('/add-favorites')
   }
 
+  const handleAddMovie = async (movieData) => {
+    const favMoviesData = await profileService.addMovie(movieData)
+    // setProfile()
+    setProfile({...profile, favMovies: favMoviesData})
+    navigate('/recommendations')
+  }
+  
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -141,7 +149,10 @@ function App() {
           path="/recommendations"
           element={
             <ProtectedRoute user={user}>
-              <Recommendations profile={profile}/>
+              <Recommendations 
+                profile={profile}
+                handleAddMovie={handleAddMovie}
+              />
             </ProtectedRoute>
           }
         />

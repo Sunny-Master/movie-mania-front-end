@@ -4,12 +4,16 @@ import MovieCard from '../MovieCard/MovieCard'
 // css
 import styles from './MovieBar.module.css'
 
-const MovieBar = ({ content }) => {
+const MovieBar = ({ content, handleAddMovie }) => {
   return ( 
     <>
       <div className={styles.scroll}>
           {content?.map(movie => 
-            <MovieCard key={movie.movieId} content={movie}/>
+            <MovieCard 
+              key={movie.movieId} 
+              content={movie}
+              handleAddMovie={handleAddMovie}
+            />
           )}
       </div>
     </>
