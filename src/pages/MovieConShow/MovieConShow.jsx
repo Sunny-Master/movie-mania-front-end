@@ -1,6 +1,6 @@
 //npm modules
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
 // components
 import MovieConView from '../../components/MovieConView/MovieConView'
@@ -24,7 +24,12 @@ const MovieConShow = (props) => {
   
   if (!movieCon) return <h1>Loading...</h1>
   return ( 
+    <>
+    {movieCon.author._id === user.profile && 
+      <NavLink to='/movieCons/edit' state={movieCon}><button type='submit'>Edit</button></NavLink>
+    } 
     <MovieConView movieCon={movieCon} user={user}/>
+    </>
   )
 }
 

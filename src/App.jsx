@@ -198,7 +198,7 @@ function App() {
           path="/movieCons/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditMovieCon />
+              <EditMovieCon profile={profile}/>
             </ProtectedRoute>
           }
         />
