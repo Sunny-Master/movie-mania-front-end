@@ -10,11 +10,11 @@ const CelebCard = ({ content, handleAddActor, handleAddDirector }) => {
             <img src={content.imageUrl} alt={content.name}  />
           </div>
           <div className={styles.flipCardBack}>
-            <div className={styles.name}>{content.name}</div>
+            <div className={styles.name}>{content.name}</div><br />
             <div className={styles.cardData}>
               <label className={styles.skill}>Known for: </label>
               <p className={styles.skills}>{content.skill}</p>
-            </div>
+            </div><br />
             <div className={styles.movies}>Movies</div>
             <div> {content.knownFor.map((movie, idx) => 
               <p key={idx}>{movie}</p>)}</div>
