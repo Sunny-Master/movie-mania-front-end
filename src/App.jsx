@@ -107,9 +107,14 @@ function App() {
   }
 
   const handleUpdateMovieCon = async (formData) => {
-    // const updatedBlog <-- This is where we'll put our update service function
     const updatedMovieCon = await movieConService.update(formData)
     setMovieCons(movieCons.map(movieCon => updatedMovieCon._id === movieCon._id ? updatedMovieCon : movieCon))
+    navigate('/movieCons')
+  }
+
+  const handleDeleteMovieCon = async (movieConId) => {
+    const deletedMovieCon = await movieConService.delete(movieConId)
+    setMovieCons(movieCons.filter(movieCon => movieCon._id !== deletedMovieCon._id))
     navigate('/movieCons')
   }
 
@@ -187,7 +192,7 @@ function App() {
         <Route
           path="/movieCons/:movieConId"
           element={
-              <MovieConShow user={user}/>
+              <MovieConShow user={user} handleDeleteMovieCon={handleDeleteMovieCon}/>
           }
         />
         <Route
