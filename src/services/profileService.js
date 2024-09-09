@@ -109,6 +109,22 @@ async function addMovie(movieData) {
   }
 }
 
+async function addToWatchList(movieData) {
+  try {
+    const res = await fetch(`${BASE_URL}/add-to-watch-list`, {
+      method: "PUT",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(movieData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
@@ -117,5 +133,5 @@ export {
   addDirector,
   addGenre,
   addMovie,
-  
+  addToWatchList,
 }
