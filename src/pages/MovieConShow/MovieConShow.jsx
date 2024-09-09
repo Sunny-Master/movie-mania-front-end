@@ -26,7 +26,10 @@ const MovieConShow = (props) => {
   return ( 
     <>
     {movieCon.author._id === user.profile && 
+      <>
       <NavLink to='/movieCons/edit' state={movieCon}><button type='submit'>Edit</button></NavLink>
+      <button onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
+      </>
     } 
     <MovieConView movieCon={movieCon} user={user}/>
     </>

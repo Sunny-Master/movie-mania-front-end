@@ -53,9 +53,24 @@ async function update(formData) {
   }
 }
 
+async function deleteMovieCon(movieConId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${movieConId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
   create,
   update,
+  deleteMovieCon as delete,
 }
