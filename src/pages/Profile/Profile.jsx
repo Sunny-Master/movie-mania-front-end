@@ -14,6 +14,7 @@ const Profile = ({profile}) => {
       <section>
         <NavLink to={`/add-favorites`}><button>Favorites</button></NavLink>
         <NavLink to={`/recommendations`}><button>Recommendations</button></NavLink>
+        <NavLink to={`/movieCons/new`}><button>Create MovieCon</button></NavLink>
       </section>
     </main>
   )

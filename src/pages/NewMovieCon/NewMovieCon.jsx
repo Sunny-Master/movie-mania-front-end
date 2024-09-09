@@ -43,7 +43,6 @@ const NewMovieCon = (props) => {
         />
         <label htmlFor="plot-input">Plot</label>
 				<textarea
-          required
           type="text"
           name="plot"
           id="plot-input"
@@ -69,7 +68,6 @@ const NewMovieCon = (props) => {
         </select>
         <label htmlFor="actors-input">Actors</label>
         <select
-          required
           multiple
           name="actors"
           id="actors-input"
@@ -85,7 +83,6 @@ const NewMovieCon = (props) => {
         </select>
         <label htmlFor="director-input">Director</label>
         <select
-          required
           name="director"
           id="director-input"
           value={formData.director.name}
