@@ -1,13 +1,14 @@
 // components
 import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
-const CommentCard = ({ comment, user }) => {
+const CommentCard = ({ comment }) => {
   return (
     <article>
       <header>
         <AuthorInfo content={comment} />
       </header>
-      <p>{comment.text}</p>
+      <div>{comment.rating}</div>
+      <p>{comment.content}</p>
     </article>
   )
 }
