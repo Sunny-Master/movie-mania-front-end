@@ -61,14 +61,14 @@ img {
 .addFav {
   position: absolute;
   border-radius: 30px;
-  margin-right: 80%;
+  margin-right: 70%;
   margin-top: 120%;
 }
 
 .addWatch {
   position: absolute;
   border-radius: 30px;
-  margin-left: 80%;
+  margin-left: 70%;
   margin-top: 120%;
 }
 

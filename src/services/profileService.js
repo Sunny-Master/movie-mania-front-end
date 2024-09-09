@@ -93,6 +93,22 @@ async function addGenre(genreData) {
   }
 }
 
+async function addMovie(movieData) {
+  try {
+    const res = await fetch(`${BASE_URL}/add-movie`, {
+      method: "PUT",
+      headers: { 
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(movieData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export { 
   getAllProfiles, 
   addPhoto,
@@ -100,4 +116,6 @@ export {
   addActor,
   addDirector,
   addGenre,
+  addMovie,
+  
 }
