@@ -93,6 +93,12 @@ function App() {
     navigate('/recommendations')
   }
   
+  const handleAddToWatchList = async (movieData) => {
+    const moviesData = await profileService.addToWatchList(movieData)
+    // setProfile()
+    setProfile({...profile, watchList: moviesData})
+    navigate('/recommendations')
+  }
 
   return (
     <>
@@ -152,6 +158,7 @@ function App() {
               <Recommendations 
                 profile={profile}
                 handleAddMovie={handleAddMovie}
+                handleAddToWatchList={handleAddToWatchList}
               />
             </ProtectedRoute>
           }

@@ -22,7 +22,7 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
       setCelebs(celebsData)
   }
   const genreList = genreObjects.filter(genre => 
-    profile.favGenres.every(favGenre => genre.id !== favGenre.genreId)
+    profile?.favGenres.every(favGenre => genre.id !== favGenre.genreId)
   )
 
   const handleChange = evt => {
@@ -32,6 +32,8 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
     selectedGenre.genreName = selectedGenre.name
     handleAddGenre(selectedGenre)
   }
+
+  if (!profile) return <h1>Loading...</h1>
 
   return (  
     <main className={styles.container}>

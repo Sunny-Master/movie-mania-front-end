@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard/MovieCard'
 // css
 import styles from './MovieBar.module.css'
 
-const MovieBar = ({ content, handleAddMovie }) => {
+const MovieBar = ({ content, handleAddMovie, handleAddToWatchList }) => {
   return ( 
     <>
       <div className={styles.scroll}>
@@ -13,6 +13,7 @@ const MovieBar = ({ content, handleAddMovie }) => {
               key={movie.movieId} 
               content={movie}
               handleAddMovie={handleAddMovie}
+              handleAddToWatchList={handleAddToWatchList}
             />
           )}
       </div>

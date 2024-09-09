@@ -1,7 +1,7 @@
 // CSS
 import styles from './MovieCard.module.css'
 
-const MovieCard = ({ content, handleAddMovie }) => {
+const MovieCard = ({ content, handleAddMovie, handleAddToWatchList }) => {
 
   return (
     <>
@@ -24,7 +24,7 @@ const MovieCard = ({ content, handleAddMovie }) => {
                     +Fav
                   </button>
                   <button className={styles.addWatch}
-                  // onClick={() => handleAddList(content)}
+                  onClick={() => handleAddToWatchList(content)}
                   >
                     +List
                   </button>
