@@ -125,6 +125,17 @@ function App() {
     navigate('/movieCons')
   }
 
+  const handleRemoveCeleb = async (celebData) => {
+    if (celebData.skill === 'Acting') {
+      const favActorsData = await profileService.removeActor(celebData._id)
+      setProfile({...profile, favActors: favActorsData})
+    } else {
+      const favDirectorsData = await profileService.removeDirector(celebData._id)
+      setProfile({...profile, favDirectors: favDirectorsData})
+    }
+    navigate('/add-favorites')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -172,6 +183,7 @@ function App() {
                 handleAddActor={handleAddActor}
                 handleAddDirector={handleAddDirector}
                 handleAddGenre={handleAddGenre}
+                handleRemoveCeleb={handleRemoveCeleb}
               />
             </ProtectedRoute>
           }
