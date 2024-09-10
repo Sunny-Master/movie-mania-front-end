@@ -28,6 +28,11 @@ const MovieConShow = (props) => {
     // set state with the result
     setMovieCon({ ...movieCon, comments: [...movieCon.comments, newComment] })
   }
+
+  const handleDeleteComment = async (movieConId, commentId) => {
+    await movieConService.deleteComment(movieConId, commentId)
+    setMovieCon({ ...movieCon, comments: movieCon.comments.filter((comment) => comment._id !== commentId) })
+  }
   
   if (!movieCon) return <h1>Loading...</h1>
   return ( 
@@ -38,7 +43,12 @@ const MovieConShow = (props) => {
       <button onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
       </>
     } 
-    <MovieConView movieCon={movieCon} user={user} handleAddComment={handleAddComment}/>
+    <MovieConView 
+      movieCon={movieCon} 
+      user={user} 
+      handleAddComment={handleAddComment}
+      handleDeleteComment={handleDeleteComment}
+      />
     </>
   )
 }

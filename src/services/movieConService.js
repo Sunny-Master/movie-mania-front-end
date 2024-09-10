@@ -99,6 +99,22 @@ const updateComment = async (movieConId, commentFormData) => {
   }
 }
 
+async function deleteComment(movieConId, commentId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${movieConId}/comments/${commentId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+      
+    })
+    console.log(res);
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
@@ -107,4 +123,5 @@ export {
   deleteMovieCon as delete,
   createComment,
   updateComment,
+  deleteComment,
 }
