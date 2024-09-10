@@ -1,7 +1,7 @@
 // CSS
 import styles from './MovieCard.module.css'
 
-const MovieCard = ({ content, handleAddMovie, handleAddToWatchList }) => {
+const MovieCard = ({ content, handleAddMovie, handleAddToWatchList, contentType, handleRemoveMovie }) => {
 
   return (
     <>
@@ -30,7 +30,7 @@ const MovieCard = ({ content, handleAddMovie, handleAddToWatchList }) => {
                   </button>
                 </>
                 :
-                <></>
+                <button onClick={() => handleRemoveMovie(content._id, contentType)}>-</button>
               }
           </div>
         </div>

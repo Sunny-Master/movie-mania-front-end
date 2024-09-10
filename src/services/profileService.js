@@ -153,6 +153,35 @@ async function removeDirector(directorId) {
   }
 }
 
+async function removeMovie(movieId) {
+  try {
+    const res = await fetch(`${BASE_URL}/favMovies/${movieId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function removeFromWatchList(movieId) {
+  try {
+    const res = await fetch(`${BASE_URL}/watchList/${movieId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 export { 
   getAllProfiles, 
   addPhoto,
@@ -164,4 +193,6 @@ export {
   addToWatchList,
   removeActor,
   removeDirector,
+  removeMovie,
+  removeFromWatchList,
 }
