@@ -1,7 +1,7 @@
 // CSS
 import styles from './CelebCard.module.css'
 
-const CelebCard = ({ content, handleAddActor, handleAddDirector }) => {
+const CelebCard = ({ content, handleAddActor, handleAddDirector, handleRemoveCeleb }) => {
   return (
     <>
       <div className={styles.flipCard}>
@@ -33,7 +33,7 @@ const CelebCard = ({ content, handleAddActor, handleAddDirector }) => {
                   </button>
                 </>
                 :
-                <></>
+                <button onClick={() => handleRemoveCeleb(content)}>-</button>
               }
           </div>
         </div>

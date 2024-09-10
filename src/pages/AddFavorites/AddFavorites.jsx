@@ -14,7 +14,7 @@ import { genreObjects } from "../../data/genres"
 // css
 import styles from './AddFavorites.module.css'
 
-const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGenre }) => {
+const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGenre, handleRemoveCeleb }) => {
   const [celebs, setCelebs] = useState(null)
 
   const searchCelebs = async (formData) => {
@@ -39,11 +39,21 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
     <main className={styles.container}>
       <h1>Add Favorites</h1><br />
       <SearchForm searchResults={searchCelebs} type='celeb'/>
-      <CelebBar content={celebs} handleAddActor={ handleAddActor } handleAddDirector={ handleAddDirector } />
+      <CelebBar 
+        content={celebs} 
+        handleAddActor={ handleAddActor } 
+        handleAddDirector={ handleAddDirector } 
+      />
       <h1>Favorite Actors</h1>
-      <CelebBar content={profile.favActors}/>
+      <CelebBar 
+        content={profile.favActors}         
+        handleRemoveCeleb={ handleRemoveCeleb }
+      />
       <h1>Favorite Directors</h1>
-      <CelebBar content={profile.favDirectors}/>
+      <CelebBar 
+        content={profile.favDirectors}
+        handleRemoveCeleb={ handleRemoveCeleb }
+      />
       <select onChange={handleChange}>
         <option value="">Select Genre</option>
         {genreList.map(genre => 
