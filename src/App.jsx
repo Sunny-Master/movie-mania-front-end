@@ -136,6 +136,17 @@ function App() {
     navigate('/add-favorites')
   }
 
+  const handleRemoveMovie = async (movieId, listType) => {
+    if (listType === 'favMovies') {
+      const favMoviesData = await profileService.removeMovie(movieId)
+      setProfile({...profile, favMovies: favMoviesData})
+    } else {
+      const watchListData = await profileService.removeFromWatchList(movieId)
+      setProfile({...profile, watchList: watchListData})
+    }
+    navigate('/recommendations')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -196,6 +207,7 @@ function App() {
                 profile={profile}
                 handleAddMovie={handleAddMovie}
                 handleAddToWatchList={handleAddToWatchList}
+                handleRemoveMovie={handleRemoveMovie}
               />
             </ProtectedRoute>
           }

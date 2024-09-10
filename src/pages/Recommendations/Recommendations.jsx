@@ -11,7 +11,7 @@ import MovieBar from "../../components/MovieBar/MovieBar"
 // css
 import styles from './Recommendations.module.css'
 
-const Recommendations = ({ profile, handleAddMovie, handleAddToWatchList}) => {
+const Recommendations = ({ profile, handleAddMovie, handleAddToWatchList, handleRemoveMovie }) => {
   const [movies, setMovies] = useState(null)
 
   const searchMovies = async (formData) => {
@@ -43,9 +43,17 @@ const Recommendations = ({ profile, handleAddMovie, handleAddToWatchList}) => {
         />
       }
       <h1>Favorite Movies</h1>
-      <MovieBar content={profile.favMovies} />
+      <MovieBar 
+        content={profile.favMovies} 
+        contentType='favMovies'
+        handleRemoveMovie={handleRemoveMovie}
+      />
       <h1>Watch List</h1>
-      <MovieBar content={profile.watchList} />
+      <MovieBar 
+        content={profile.watchList} 
+        contentType='watchList'
+        handleRemoveMovie={handleRemoveMovie}
+      />
     </main>
   )
 }
