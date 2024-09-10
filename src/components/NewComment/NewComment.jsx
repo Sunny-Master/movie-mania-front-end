@@ -20,13 +20,7 @@ const NewComment = (props) => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <textarea 
-        name="content" 
-        value={formData.content}
-        placeholder='Add a Comment'
-        onChange={handleChange}
-      />
-      <label htmlFor="rating-input">Rating</label>
+      <label htmlFor="rating-input">Rating:</label>
         <select
           required
           name="rating"
@@ -40,6 +34,14 @@ const NewComment = (props) => {
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
+        <br />
+      <textarea 
+        name="content" 
+        value={formData.content}
+        placeholder='Add a Comment'
+        onChange={handleChange}
+      />
+        <br />
       <button type="submit">Add Comment</button>
     </form>
   )

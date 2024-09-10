@@ -4,10 +4,13 @@ import { NavLink } from "react-router-dom"
 // components
 import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
+// css
+import styles from './CommentCard.module.css'
+
 const CommentCard = ({ comment, movieConId, user, handleDeleteComment }) => {
   return (
     
-    <article>
+    <article className={styles.card}>
       <header>
         <AuthorInfo content={comment} />
         {
@@ -23,8 +26,10 @@ const CommentCard = ({ comment, movieConId, user, handleDeleteComment }) => {
           </>
           }
       </header>
-      <div>{comment.rating}</div>
-      <p>{comment.content}</p>
+      <section className={styles.bottom}>
+      <div className={styles.rating}>{comment.rating}/5</div>
+      <p className={styles.content}>{comment.content}</p>
+      </section>
     </article>
   )
 }

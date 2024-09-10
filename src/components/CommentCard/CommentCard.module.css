@@ -1,0 +1,22 @@
+.card {
+  width: 100%;
+  border: solid;
+  margin-bottom: 2%;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  padding: 3px;
+}
+
+.bottom {
+  display: flex;
+}
+
+.rating {
+  position: absolute;
+  margin-left: 87%;
+  margin-top: -9%;
+  font-weight: bold;
+  font-size: 25px;
+}
+
