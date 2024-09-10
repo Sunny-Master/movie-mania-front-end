@@ -181,6 +181,20 @@ async function removeFromWatchList(movieId) {
   }
 }
 
+async function removeGenre(genreId) {
+  try {
+    const res = await fetch(`${BASE_URL}/favGenres/${genreId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 export { 
   getAllProfiles, 
@@ -195,4 +209,5 @@ export {
   removeDirector,
   removeMovie,
   removeFromWatchList,
+  removeGenre
 }

@@ -14,7 +14,7 @@ import { genreObjects } from "../../data/genres"
 // css
 import styles from './AddFavorites.module.css'
 
-const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGenre, handleRemoveCeleb }) => {
+const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGenre, handleRemoveCeleb, handleRemoveGenre }) => {
   const [celebs, setCelebs] = useState(null)
 
   const searchCelebs = async (formData) => {
@@ -65,7 +65,12 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
       <section>
         <h1>Favorite Genres </h1>
         {profile.favGenres.map(genre => 
-          <h4 key={genre.genreId}>{genre.genreName}</h4>
+          // console.log(genre)
+          <section key={genre._id}>
+            <h4 >{genre.genreName}</h4>
+            <button onClick={() => handleRemoveGenre(genre._id)}> 🗑️ </button>
+          </section>
+          
         )}
       </section>
     </main>

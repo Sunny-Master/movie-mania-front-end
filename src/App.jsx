@@ -147,6 +147,12 @@ function App() {
     navigate('/recommendations')
   }
 
+  const handleRemoveGenre = async (genreId) => {
+    const favGenresData = await profileService.removeGenre(genreId)
+    setProfile({...profile, favGenres: favGenresData})
+    navigate('/add-favorites')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -195,6 +201,7 @@ function App() {
                 handleAddDirector={handleAddDirector}
                 handleAddGenre={handleAddGenre}
                 handleRemoveCeleb={handleRemoveCeleb}
+                handleRemoveGenre={handleRemoveGenre}
               />
             </ProtectedRoute>
           }
