@@ -15,6 +15,7 @@ import Recommendations from './pages/Recommendations/Recommendations'
 import MovieCons from './pages/MovieCons/MovieCons'
 import MovieConShow from './pages/MovieConShow/MovieConShow'
 import EditMovieCon from './pages/EditMovieCon/EditMovieCon'
+import EditComment from './pages/EditComment/EditComment'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -118,6 +119,12 @@ function App() {
     navigate('/movieCons')
   }
 
+  const handleUpdateComment = async (formData) => {
+    const updatedComment = await movieConService.updateComment(formData)
+    setMovieCons(movieCons.map(movieCon => updatedComment._id === movieCon._id ? updatedComment : comment))
+    navigate('/movieCons')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -211,6 +218,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditMovieCon profile={profile} handleUpdateMovieCon={handleUpdateMovieCon}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movieCons/:movieConId/comments/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditComment profile={profile} handleUpdateComment={handleUpdateComment}/>
             </ProtectedRoute>
           }
         />
