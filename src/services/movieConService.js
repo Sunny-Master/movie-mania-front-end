@@ -83,6 +83,22 @@ async function createComment(movieConId, commentFormData) {
   }
 }
 
+const updateComment = async (movieConId, commentFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${movieConId}/comments`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(commentFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
   index,
   show,
@@ -90,4 +106,5 @@ export {
   update,
   deleteMovieCon as delete,
   createComment,
+  updateComment,
 }
