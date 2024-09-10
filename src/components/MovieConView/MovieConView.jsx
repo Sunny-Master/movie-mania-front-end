@@ -9,7 +9,7 @@ import Comments from '../Comments/Comments'
 import styles from './MovieConView.module.css'
 
 const MovieConView = (props) => {
-  const { movieCon, handleAddComment, user } = props
+  const { movieCon, handleAddComment, handleDeleteComment, user } = props
 
   return ( 
     <>
@@ -50,7 +50,12 @@ const MovieConView = (props) => {
       <h1 className={styles.header2}>Comments</h1>
       <NewComment handleAddComment={handleAddComment}/>
       <section className={styles.bottom}>
-        <Comments comments={movieCon.comments} user={props.user} movieConId={movieCon._id} />
+        <Comments 
+          comments={movieCon.comments} 
+          user={props.user} 
+          movieConId={movieCon._id}
+          handleDeleteComment={handleDeleteComment}
+        />
       </section>
     </main>
     </> 

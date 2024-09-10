@@ -11,6 +11,7 @@ const Comments = (props) => {
           comment={comment}
           user={props.user} 
           movieConId={props.movieConId}
+          handleDeleteComment={props.handleDeleteComment}
         />
       )}
     </>
