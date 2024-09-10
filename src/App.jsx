@@ -119,12 +119,6 @@ function App() {
     navigate('/movieCons')
   }
 
-  const handleUpdateComment = async (formData) => {
-    const updatedComment = await movieConService.updateComment(formData)
-    setMovieCons(movieCons.map(movieCon => updatedComment._id === movieCon._id ? updatedComment : comment))
-    navigate('/movieCons')
-  }
-
   const handleRemoveCeleb = async (celebData) => {
     if (celebData.skill === 'Acting') {
       const favActorsData = await profileService.removeActor(celebData._id)
@@ -256,7 +250,7 @@ function App() {
           path="/movieCons/:movieConId/comments/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditComment profile={profile} handleUpdateComment={handleUpdateComment}/>
+              <EditComment/>
             </ProtectedRoute>
           }
         />
