@@ -6,12 +6,16 @@
   margin-top: 2%;
   margin-bottom: 2%;
   height: fit-content;
-  min-width: 600px;
+  width: 80vw;
   background-color: #3d3151;
 }
 
+.main {
+  width: 100vw;
+}
+
 .top {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -19,12 +23,12 @@
 
 .bottom {
   border-style: solid;
-  height: 400px;
+  height: 100vh;
 }
 
 .credits {
   border-style: solid;
-  width: 30%;
+  width: 30vw;
   margin-right: 5%;
   text-align: center;
   background-color: #3d3151;
@@ -40,6 +44,7 @@ p {
   align-items: center;
   gap: 1rem;
   justify-content: center;
+  font-size: 1vw;
 }
 
 h1 {
@@ -48,7 +53,7 @@ h1 {
 }
 
 .name {
-  font-size: 20px;
+  font-size: 1.2vw;
 }
 
 h6 {
@@ -56,38 +61,39 @@ h6 {
 }
 
 .direct {
-  font-size: 20px;
+  font-size: 1.2vw;
 }
 
 .titled {
   text-decoration: underline;
-  font-size: 25px;
+  font-size: 1.5vw;
 }
 
 .header2 {
   border-style: solid;
   text-align: center;
-  width: 20%;
-  margin-left: 58%;
-  margin-bottom: 2%;
+  width: 40vw;
+  margin-left: 30%;
   background-color: #3d3151;
+  position: absolute;
+  margin-top: 1vh;
 }
 
 .bottom {
+  position: relative;
   display: flex;
-  height: 400px;
-  width: 35%;
-  margin-left: 50%;
-  margin-top: 1.5%;
+  height: 45vh;
+  width: 80vw;
+  margin-left: 10%;
+  margin-top: 8vh;
   background-color: #3d3151;
-
 }
 
 .header3 {
   border-style: solid;
   text-align: center;
-  width: 20%;
-  margin-left: 15%;
+  width: 40vw;
+  margin-left: 30%;
   margin-bottom: 2%;
   background-color: #3d3151;
 }
@@ -95,39 +101,45 @@ h6 {
 .plot {
   text-align: center;
   border-style: solid;
-  width: 40%;
-  margin-left: 5%;
-  height: 400px;
+  width: 80vw;
+  margin-left: 10%;
+  height: 32vh;
   overflow-y: hidden;
   overflow-y: auto;
   background-color: #3d3151;
 }
 
 .comment {
-  width: 60%;
-  margin-left: 4%;
-  margin-top: 2%;
+  width: 60vw;
+  margin-left: 3%;
+  margin-top: 1%;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
 }
 
-.box {
-  position: left;
-  width: fit-content;
-  position: relative;
-  right: -4%;
-  top: -10%;
-  margin-right: 0%;
+.commentbox {
+  width: 14vw;
+  height: 44vh;
+}
 
+.box {
+  width: 14vw;
+  height: 44vh;
+  position: absolute;
+  top: 3%;
+  left: 80%;
 }
 
 .left {
-  width: 110vw;
+  width: 100vw;
+  height: 40vh;
   position: absolute;
 }
 
 .right {
-  width: 110vw;
+  width: 100vw;
+  height: 60vh;
   position: absolute;
+  top: 40vh;
 }
