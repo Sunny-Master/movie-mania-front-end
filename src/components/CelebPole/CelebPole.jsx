@@ -8,17 +8,16 @@ const CelebPole = ({ content, handleAddActor, handleAddDirector, handleRemoveCel
   return ( 
     <>
       <div className={styles.scroll2}>
-        {content?.map(celeb => 
-        <>
-          <CelebCard 
-            key={celeb.celebId} 
-            content={celeb} 
-            handleAddActor={handleAddActor} 
-            handleAddDirector={handleAddDirector}
-            handleRemoveCeleb={handleRemoveCeleb}
-          />
-          <br /><br />
-          </>
+        {content.map(celeb => 
+          <div key={celeb.celebId}>
+            <CelebCard 
+              content={celeb} 
+              handleAddActor={handleAddActor} 
+              handleAddDirector={handleAddDirector}
+              handleRemoveCeleb={handleRemoveCeleb}
+            />
+            <br /><br />
+          </div>
         )}
       </div>
     </>

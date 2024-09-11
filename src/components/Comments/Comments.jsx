@@ -3,8 +3,6 @@ import CommentCard from "../CommentCard/CommentCard"
 
 const Comments = (props) => {
   const sortedComments = props.comments.sort((a, b) =>Date.parse(b.updatedAt) - Date.parse(a.updatedAt))
-  console.log(props.comments)
-  console.log(sortedComments)
 
   if (!props.comments.length) return <h4>No Comments</h4>
   return (

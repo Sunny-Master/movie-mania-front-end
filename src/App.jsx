@@ -105,6 +105,7 @@ function App() {
   const handleAddMovieCon = async (movieConFormData) => {
     const newMovieCon = await movieConService.create(movieConFormData)
     setMovieCons([newMovieCon, ...movieCons])
+    setProfile({...profile, movieConcepts: [newMovieCon, ...profile.movieConcepts]})
     navigate('/movieCons')
   }
 
