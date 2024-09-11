@@ -47,6 +47,23 @@ h1 {
   margin-bottom: 0%;
 }
 
+.name {
+  font-size: 20px;
+}
+
+h6 {
+  margin: 0%;
+}
+
+.direct {
+  font-size: 20px;
+}
+
+.titled {
+  text-decoration: underline;
+  font-size: 25px;
+}
+
 .header2 {
   border-style: solid;
   text-align: center;

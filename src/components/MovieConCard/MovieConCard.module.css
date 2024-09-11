@@ -1,14 +1,16 @@
 .container {
-  width: 80%;
+  width: 320px;
   margin-left: 10%;
-  height: 220px;
+  height: 270px;
   padding: 14px 21px;
   border-radius: 5px;
   border: 5px solid rgb(220, 220, 220);
-  background-color: whitesmoke;
+  background-color: #3d3151;
   box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .container h1 {
@@ -23,8 +25,9 @@
 .data {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: black;
+  gap: .5rem;
+  color: whitesmoke;
+  overflow-x: auto;
 }
 
 .container p {
@@ -46,8 +49,32 @@
 
 .title {
   text-align: center;
+  border: solid;
+  border-style: groove;
+  border-right: none;
+  border-left: none;
+  height: fit-content;
 }
 
 h4 {
-  text-align: center;
+  overflow-x: hidden;
+}
+
+.design {
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+.data2 {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

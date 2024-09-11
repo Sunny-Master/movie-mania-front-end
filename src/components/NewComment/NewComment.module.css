@@ -4,16 +4,21 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin-top: 60%;
+  margin-top: 30%;
   margin-left: 10%;
   position: relative;
 
+}
+
+.h1 {
+  text-decoration: underline;
 }
 
 textarea {
   height: 200px;
   width: 150px;
   border-radius: 5%;
+  text-align: center;
 }
 
 select {
@@ -21,6 +26,9 @@ select {
   border-radius: 25%;
 }
 
-button {
-  border-radius: 5%;
+.btn5 {
+  border-radius: 10%;
+  height: 30px;
+  background-color: whitesmoke;
+  font-weight: bold;
 }

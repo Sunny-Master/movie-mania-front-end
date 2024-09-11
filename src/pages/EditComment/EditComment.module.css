@@ -1,0 +1,53 @@
+.container2 {
+  border: solid;
+  width: 20vw;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 5%;
+  position: relative;
+  background-color: #3d3151;
+}
+
+.btn4 {
+  position: absolute;
+  height: 30px;
+  bottom: 10px;
+  right: 27%;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: whitesmoke;
+  font-size: 15px;
+}
+
+.h1 {
+  position: absolute;
+  top: 3%;
+}
+
+.label {
+  position: absolute;
+  color: whitesmoke;
+  top: 15%;
+  left: 35%;
+}
+
+.textarea {
+  position: absolute;
+  height: 220px;
+  width: 200px;
+  border-radius: 5%;
+  left: 18%;
+  top: 30%;
+}
+
+.select {
+  position: absolute;
+  top: 13%;
+  left: 55%;
+  height: 10%;
+  border-radius: 25%;
+}

@@ -17,11 +17,11 @@ const CommentCard = ({ comment, movieConId, user, handleDeleteComment }) => {
           <>
           {comment.author._id === user.profile &&
             <NavLink to={`/movieCons/${movieConId}/comments/edit`} state={comment}>
-              <button>Edit</button>
+              <button className={styles.btn3}>Edit</button>
             </NavLink>}
           {comment.author._id === user.profile &&
             <NavLink to={`/movieCons/${movieConId}`} state={comment}>
-              <button onClick={() => handleDeleteComment(movieConId, comment._id)}>☠️</button>
+              <button className={styles.btn4} onClick={() => handleDeleteComment(movieConId, comment._id)}>☠️</button>
             </NavLink>}
           </>
           }

@@ -31,15 +31,19 @@ const EditComment = () => {
   }
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+  <section className={styles.container2}>
+    <h1 className={styles.h1}>Edit Your Comment</h1>
+    <form onSubmit={handleSubmit}>
       <textarea 
+        className={styles.textarea}
         name="content" 
         value={formData.content}
         placeholder='Edit a Comment'
         onChange={handleChange}
       />
-      <label htmlFor="rating-input">Rating</label>
+      <label className={styles.label} htmlFor="rating-input">Rating</label>
         <select
+          className={styles.select}
           required
           name="rating"
           id="rating-input"
@@ -52,8 +56,9 @@ const EditComment = () => {
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-      <button type="submit">Submit Comment</button>
+      <button className={styles.btn4} type="submit">Submit Comment</button>
     </form>
+  </section>
   )
 }
 

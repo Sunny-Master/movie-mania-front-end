@@ -20,6 +20,7 @@ const NewComment = (props) => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
+      <h1 className={styles.h1}>New Comment</h1><br />
       <label htmlFor="rating-input">Rating:</label>
         <select
           required
@@ -42,7 +43,7 @@ const NewComment = (props) => {
         onChange={handleChange}
       />
         <br />
-      <button type="submit">Add Comment</button>
+      <button className={styles.btn5} type="submit">Add Comment</button>
     </form>
   )
 }
