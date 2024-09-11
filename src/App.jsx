@@ -16,6 +16,7 @@ import MovieCons from './pages/MovieCons/MovieCons'
 import MovieConShow from './pages/MovieConShow/MovieConShow'
 import EditMovieCon from './pages/EditMovieCon/EditMovieCon'
 import EditComment from './pages/EditComment/EditComment'
+import MovieDetails from './pages/MovieDetails/MovieDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -206,6 +207,15 @@ function App() {
             <ProtectedRoute user={user}>
               <Recommendations 
                 profile={profile}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/recommendations/movie-details"
+          element={
+            <ProtectedRoute user={user}>
+              <MovieDetails 
                 handleAddMovie={handleAddMovie}
                 handleAddToWatchList={handleAddToWatchList}
                 handleRemoveMovie={handleRemoveMovie}

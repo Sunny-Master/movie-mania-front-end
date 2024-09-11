@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movieData {
+  display: flex;
+  margin: 1% 3%;
+  align-items: center;
+  gap: 5%;
+}
+
