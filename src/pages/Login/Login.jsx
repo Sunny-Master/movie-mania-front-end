@@ -55,6 +55,7 @@ const LoginPage = ({ handleAuthEvt }) => {
             value={email}
             name="email"
             onChange={handleChange}
+            className={styles.input}
           />
         </label>
         <label className={styles.label}>
@@ -64,6 +65,7 @@ const LoginPage = ({ handleAuthEvt }) => {
             value={password}
             name="password"
             onChange={handleChange}
+            className={styles.input}
           />
         </label>
         <div>
