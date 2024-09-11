@@ -4,7 +4,7 @@ import CelebCard from '../CelebCard/CelebCard'
 // CSS
 import styles from './CelebPole.module.css'
 
-const CelebBar = ({ content, handleAddActor, handleAddDirector, handleRemoveCeleb }) => {
+const CelebPole = ({ content, handleAddActor, handleAddDirector, handleRemoveCeleb }) => {
   return ( 
     <>
       <div className={styles.scroll2}>
@@ -25,4 +25,4 @@ const CelebBar = ({ content, handleAddActor, handleAddDirector, handleRemoveCele
   )
 }
 
-export default CelebBar
+export default CelebPole

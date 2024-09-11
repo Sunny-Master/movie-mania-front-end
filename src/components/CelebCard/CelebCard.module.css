@@ -1,20 +1,16 @@
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-  width: 185px;
-  height: 250px;
+  width: 11.7vw;
+  height: 30vh;
   perspective: 1000px;
 }
-
-/* h1, h2, p {
-  margin: 0%;
-} */
 
 /* This container is needed to position the front and back side */
 .flipCardInner {
   position: absolute;
-  width: 185px;
-  height: 250px;
+  width: 11.6vw;
+  height: 30vh;
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
@@ -28,8 +24,8 @@
 /* Position the front and back side */
 .flipCardFront, .flipCardBack {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 11vw;
+  height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +36,7 @@
 
 /* Style the front side (fallback if image is missing) */
 .flipCardFront {
-  background-color: #bbbbbb;
+  /* background-color: #bbbbbb; */
   color: black;
   border-radius: 10px;
 }
@@ -51,15 +47,15 @@
   color: white;
   transform: rotateY(180deg);
   font-size: 0.85rem;
-  width: 100%;
-  height: 250px;
+  width: 11vw;
+  height: 31vh;
   border-radius: 10px;
   border: solid whitesmoke;
 }
 
-img {
-  width: 185px;
-  height: 200px;
+.img {
+  width: 11vw;
+  height: 30vh;
   border-radius: 10px;
   border: solid black;
 }
@@ -73,35 +69,50 @@ img {
 .name {
   font-weight: bolder;
   margin-top: 2%;
-  font-size: 20px;
+  font-size: 1vw;
 }
 
 .skill {
   position: relative;
   margin-left: -10%;
+  font-size: .7vw;
 }
 
 .skills {
   position: relative;
   margin-left: 15%;
+  font-size: .7vw;
+}
+
+.movie {
+  font-size: .7vw;
 }
 
 .movies {
   text-decoration: underline;
   font-weight: bold;
-  font-size: 15px;
+  font-size: .9vw;
 }
 
 .addActor {
   position: absolute;
   border-radius: 30px;
-  margin-right: 80%;
-  margin-top: 120%;
+  margin-right: 8vw;
+  margin-top: 27vh;
+  font-size: .7vw;
 }
 
 .addDirector {
   position: absolute;
   border-radius: 30px;
-  margin-left: 80%;
-  margin-top: 120%;
+  margin-left: 8vw;
+  margin-top: 27vh;
+  font-size: .7vw;
+}
+
+.remove {
+  position: absolute;
+  border-radius: 30px;
+  margin-top: 27vh;
+  font-size: .6vw;
 }

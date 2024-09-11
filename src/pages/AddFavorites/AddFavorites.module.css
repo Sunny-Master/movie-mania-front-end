@@ -15,7 +15,6 @@ option {
   width: 100vw;
   height: 900px;
   overflow-y: hidden;
-  overflow-x: hidden;
 }
 
 .scrollA {
@@ -29,19 +28,21 @@ option {
 }
 
 .genre {
-  height: 30px;
-  width: 50%;
+  height: 3vh;
+  width: 10vw;
   border-radius: 5%;
   background-color: whitesmoke;
   font-weight: bold;
+  font-size: .9vw;
 }
 
 .genres {
   display: flex;
   flex-direction: column;
-  width: 20%;
-  height: 90%;
+  width: fit-content;
+  height: 60vh;
   text-align: center;
+  justify-content: center;
   align-items: center;
   overflow-y: hidden;
 }
@@ -54,7 +55,9 @@ option {
   align-items: center;
   border: solid;
   font-weight: bold;
-  width: 150px;
+  font-size: .7vw;
+  width: 9vw;
+  height: 6vh;
   border-color: black;
   margin-bottom: 5%;
 
@@ -63,9 +66,14 @@ option {
 .btn6 {
   background-color: #3d3151;
   color: whitesmoke;
+  font-size: .7vw;
 }
 
 .wrap {
-  width: 150px;
+  width: fit-content;
   overflow-y: auto;
+}
+
+.line {
+  font-size: 1.5vw;
 }

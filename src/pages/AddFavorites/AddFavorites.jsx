@@ -39,7 +39,7 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
   return (  
     <main className={styles.container}>
       <br />
-      <h1>Add Favorites</h1><br />
+      <h1 className={styles.line}>Add Favorites</h1><br />
       <SearchForm searchResults={searchCelebs} type='celeb'/>
       <CelebBar 
         content={celebs} 
@@ -48,21 +48,21 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
       />
       <section className={styles.twin}>
         <div className={styles.scrollA}>
-            <h1>Favorite Actors</h1><br />
+            <h1 className={styles.line}>Favorite Actors</h1><br />
           <CelebPole 
             content={profile.favActors}         
             handleRemoveCeleb={ handleRemoveCeleb }
           />
         </div>
         <div className={styles.scrollB}>
-          <h1 className={styles.fixed}>Favorite Directors</h1><br />
+          <h1 className={styles.line}>Favorite Directors</h1><br />
           <CelebPole  
             content={profile.favDirectors}
             handleRemoveCeleb={ handleRemoveCeleb }
           />
         </div>
         <div className={styles.genres}>
-          <h1>Favorite Genres </h1><br />
+          <h1 className={styles.line}>Favorite Genres </h1><br />
           <select className={styles.genre} onChange={handleChange}>
             <option value="">Select Genre</option>
             {genreList.map(genre => 
