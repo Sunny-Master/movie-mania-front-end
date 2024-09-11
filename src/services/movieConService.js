@@ -15,7 +15,7 @@ async function index() {
 async function show(movieConId) {
   try {
     const res = await fetch(`${BASE_URL}/${movieConId}`)
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -31,7 +31,7 @@ async function create(movieConFormData) {
       },
       body: JSON.stringify(movieConFormData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -47,7 +47,7 @@ async function update(formData) {
       },
       body: JSON.stringify(formData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -61,7 +61,7 @@ async function deleteMovieCon(movieConId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -77,7 +77,7 @@ async function createComment(movieConId, commentFormData) {
       },
       body: JSON.stringify(commentFormData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -93,7 +93,7 @@ const updateComment = async (movieConId, commentFormData) => {
       },
       body: JSON.stringify(commentFormData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -107,7 +107,7 @@ async function deleteComment(movieConId, commentId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }

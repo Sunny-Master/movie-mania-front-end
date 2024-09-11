@@ -16,7 +16,9 @@ const Recommendations = ({ profile }) => {
 
   const searchMovies = async (formData) => {
     const moviesData = await tmdbService.getMovies(formData)
-    setMovies(moviesData)
+    const moviesInProfile = [...profile.favMovies, ...profile.watchList]
+    const moviesResults = moviesData.filter(movie => moviesInProfile.every(profileMovie => profileMovie.movieId !== movie.movieId))
+    setMovies(moviesResults)
   }
 
   useEffect(() => {
@@ -29,6 +31,9 @@ const Recommendations = ({ profile }) => {
 
   if (!profile) return <h1>Loading...</h1>
 
+  const moviesInProfile = [...profile.favMovies, ...profile.watchList]
+  const moviesResults = movies?.filter(movie => moviesInProfile.every(profileMovie => profileMovie.movieId !== movie.movieId))
+
   return (  
     <main className={styles.container}>
       <h1>Movie Recommendations</h1><br />
@@ -37,7 +42,7 @@ const Recommendations = ({ profile }) => {
         <h1>Loading Your Personalized Movies</h1>
         : 
         <MovieBar 
-          content={movies} 
+          content={moviesResults} 
         />
       }
       <h1>Favorite Movies</h1>

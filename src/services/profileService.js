@@ -39,7 +39,7 @@ async function show(profileId) {
         'Authorization': `Bearer ${tokenService.getToken()}` 
       },
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -55,9 +55,11 @@ async function addActor(celebData) {
       },
       body: JSON.stringify(celebData)
     })
-    return res.json()
+    const json = await res.json()
+    if (json.error) throw new Error(json.error)
+    return json
   } catch (error) {
-    console.log(error)
+    throw new Error(error)
   }
 }
 
@@ -71,7 +73,7 @@ async function addDirector(celebData) {
       },
       body: JSON.stringify(celebData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -87,7 +89,7 @@ async function addGenre(genreData) {
       },
       body: JSON.stringify(genreData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -103,7 +105,7 @@ async function addMovie(movieData) {
       },
       body: JSON.stringify(movieData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -119,7 +121,7 @@ async function addToWatchList(movieData) {
       },
       body: JSON.stringify(movieData)
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -133,7 +135,7 @@ async function removeActor(actorId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -147,7 +149,7 @@ async function removeDirector(directorId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -161,7 +163,7 @@ async function removeMovie(movieId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -175,7 +177,7 @@ async function removeFromWatchList(movieId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
@@ -189,7 +191,7 @@ async function removeGenre(genreId) {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
     })
-    return res.json()
+    return await res.json()
   } catch (error) {
     console.log(error)
   }
