@@ -6,6 +6,6 @@
   justify-content: flex-start;
   height: fit-content;
   overflow-y: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   gap: 20%;
 }
