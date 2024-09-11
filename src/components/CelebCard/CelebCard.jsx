@@ -7,7 +7,7 @@ const CelebCard = ({ content, handleAddActor, handleAddDirector, handleRemoveCel
       <div className={styles.flipCard}>
         <div className={styles.flipCardInner}>
           <div className={styles.flipCardFront}>
-            <img src={content.imageUrl} alt={content.name}  />
+            <img className={styles.img} src={content.imageUrl} alt={content.name}  />
           </div>
           <div className={styles.flipCardBack}>
             <div className={styles.name}>{content.name}</div><br />
@@ -16,7 +16,7 @@ const CelebCard = ({ content, handleAddActor, handleAddDirector, handleRemoveCel
               <p className={styles.skills}>{content.skill}</p>
             </div><br />
             <div className={styles.movies}>Movies</div>
-            <div> {content.knownFor.map((movie, idx) => 
+            <div className={styles.movie}> {content.knownFor.map((movie, idx) => 
               <p key={idx}>{movie}</p>)}</div>
               {handleAddActor ? 
                 <>
@@ -33,7 +33,8 @@ const CelebCard = ({ content, handleAddActor, handleAddDirector, handleRemoveCel
                   </button>
                 </>
                 :
-                <button onClick={() => handleRemoveCeleb(content)}>-</button>
+                <button className={styles.remove}
+                onClick={() => handleRemoveCeleb(content)}>Remove</button>
               }
           </div>
         </div>

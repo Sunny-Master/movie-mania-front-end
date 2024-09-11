@@ -11,11 +11,7 @@ const MovieCard = ({ content, contentType }) => {
   return (
     <NavLink to='/recommendations/movie-details' state={movie}>
       <div className={styles.flipCard}>
-        <div className={styles.flipCardInner}>
-          <div className={styles.flipCardFront}>
             <img src={content.imageUrl} alt={content.title}  />
-          </div>
-        </div>
       </div>
     </NavLink>
   )
