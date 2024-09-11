@@ -1,7 +1,7 @@
 .main {
   border: solid;
-  width: 60vw;
-  height: 70vh;
+  width: 35vw;
+  height: 60vh;
   /* display: flex;
   align-items: center;
   justify-content: center; */
@@ -15,43 +15,99 @@
 
 .top {
   position: absolute;
-  top: 5%;
+  top: 2%;
   display: flex;
-  justify-content: space-between;
-  border: solid;
+  align-items: center;
+  justify-content: space-evenly;
   width: 100%;
+  height: 20%;
+}
+
+.title {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 2%;
+}
+
+.titleinput {
+  width: 22vw;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.select {
+  border-radius: 5%;
+}
+
+.select2 {
+  position: absolute;
+  border-radius: 5%;
+  top: 120%;
+  height: 650%;
+}
+
+.genres2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 10%;
+  top: 25%;
+
 }
 
 .middle {
   position: absolute;
-  top: 20%;
-  width: 100%;
-  height: 30%;
-  border: solid;
+  top: 25%;
+  width: 70%;
+  height: 20%;
 }
 
 .actor {
   position: absolute;
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 30%;
-  right: 10%;
-  border: solid;
+  right: 5%;
+  height: 385%;
 }
 
 .director {
   position: absolute;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  border: solid;
   left: 10%;
   width: 30%;
+  height: 100%;
 }
 
 .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  top: 55%;
+  top: 50%;
   width: 100%;
-  height: 45%;
-  border: solid;
+  height: 50%;
+}
+
+.plott {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.plotinput {
+  width: 90%;
+}
+
+.btn7 {
+  background-color: whitesmoke;
+  border-radius: 5%;
+  width: 20%;
+  height: 10%;
+  margin-bottom: 1%;
+  font-weight: bold;
 }
