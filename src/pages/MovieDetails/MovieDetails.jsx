@@ -13,7 +13,6 @@ const MovieDetails = (props) => {
   const contentType = state.contentType
   const genreList = genreObjects.filter(genre => movie.genreIds.includes(genre.id))
 
-  console.log(movie)
   return (  
     <main className={styles.container}>
       <h1 className={styles.title}>Title: {movie.title}</h1>
