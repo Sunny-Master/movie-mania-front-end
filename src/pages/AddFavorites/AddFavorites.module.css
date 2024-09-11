@@ -19,12 +19,12 @@ option {
 }
 
 .scrollA {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 90%;
 }
 
 .scrollB {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 90%;
 }
 
@@ -67,5 +67,5 @@ option {
 
 .wrap {
   width: 150px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
