@@ -20,7 +20,7 @@ const MovieDetails = (props) => {
         <section>
           <img src={movie.imageUrl} alt={movie.title}  />
         </section>
-        <section>
+        <section className={styles.movieDetail}>
           <section>
             <label>Genres:</label>
             {genreList.map(genre =>
