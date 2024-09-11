@@ -207,9 +207,6 @@ function App() {
             <ProtectedRoute user={user}>
               <Recommendations 
                 profile={profile}
-                handleAddMovie={handleAddMovie}
-                handleAddToWatchList={handleAddToWatchList}
-                handleRemoveMovie={handleRemoveMovie}
               />
             </ProtectedRoute>
           }
