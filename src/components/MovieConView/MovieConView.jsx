@@ -13,18 +13,20 @@ const MovieConView = (props) => {
 
   return ( 
     <>
-    <main>
+    <main className={styles.main}>
       {!movieCon.director ?
         <section className={styles.header}>
-          <h1> {movieCon.author.name}'s "{movieCon.title}"</h1>
+          <h1> <span className={styles.name}>{movieCon.author.name}'s</span> <span className={styles.titled}>{movieCon.title}</span></h1>
           <section className={styles.data}>
             The {movieCon.genres.map((genre, idx) => 
               <h4 key={idx}>{genre}</h4>
             )} Film
           </section>
-          {movieCon.actors.map((actor, idx) => 
-              <h4 key={idx}>{actor}</h4>
+          <section className={styles.data}>
+          Starring {movieCon.actors.map((actor, idx) => 
+              <h4 key={idx}> {actor} </h4>
             )}
+          </section>
         </section>
         :
         <section className={styles.header}>

@@ -4,31 +4,36 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin-top: 30%;
   margin-left: 10%;
   position: relative;
-
+  height: 40vh;
 }
 
 .h1 {
   text-decoration: underline;
+  font-size: 1.5vw;
 }
 
-textarea {
-  height: 200px;
-  width: 150px;
+.rating {
+  font-size: 1vw;
+}
+
+.text {
+  height: 20vh;
+  width: 10vw;
   border-radius: 5%;
   text-align: center;
 }
 
 select {
-  height: 20%;
+  height: 2vh;
   border-radius: 25%;
 }
 
 .btn5 {
   border-radius: 10%;
-  height: 30px;
+  height: 3vh;
   background-color: whitesmoke;
   font-weight: bold;
+  font-size: .8vw;
 }

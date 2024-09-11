@@ -27,7 +27,7 @@ const EditMovieCon = (props) => {
 
   return (  
     <main>
-      <h1>Edit Movie Concept</h1>
+      <h1 className={styles.title2}>Edit Movie Concept</h1>
       <section className={styles.main}>
         <form onSubmit={handleSubmit}>
           <div className={styles.top}>
