@@ -10,9 +10,17 @@ input[type="file"] {
 }
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  border: solid;
+  width: 25vw;
+  height: 40vh;
+  margin-top: 5%;
+  margin-left: 35%;
+  background-color: #3d3151;
 }
 
 .message {
