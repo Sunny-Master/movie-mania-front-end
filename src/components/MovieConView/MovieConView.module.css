@@ -5,21 +5,21 @@
   margin-right: 10%;
   margin-top: 2%;
   margin-bottom: 2%;
-  height: 85px;
+  height: fit-content;
+  min-width: 600px;
   background-color: #3d3151;
 }
 
 .top {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  height: 250px;
+  flex-direction: column;
+  position: relative;
 }
 
 .bottom {
   border-style: solid;
   height: 400px;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 .credits {
@@ -30,16 +30,6 @@
   background-color: #3d3151;
 }
 
-.header2 {
-  border-style: solid;
-  text-align: center;
-  margin-left: 30%;
-  margin-right: 30%;
-  position: relative;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  background-color: #3d3151;
-}
 
 p {
   margin: 5%;
@@ -57,20 +47,91 @@ h1 {
   margin-bottom: 0%;
 }
 
+.name {
+  font-size: 20px;
+}
+
+h6 {
+  margin: 0%;
+}
+
+.direct {
+  font-size: 20px;
+}
+
+.titled {
+  text-decoration: underline;
+  font-size: 25px;
+}
+
+.header2 {
+  border-style: solid;
+  text-align: center;
+  width: 20%;
+  margin-left: 58%;
+  margin-bottom: 2%;
+  background-color: #3d3151;
+}
+
+.bottom {
+  display: flex;
+  height: 400px;
+  width: 35%;
+  margin-left: 50%;
+  margin-top: 1.5%;
+  background-color: #3d3151;
+
+}
+
+.header3 {
+  border-style: solid;
+  text-align: center;
+  width: 20%;
+  margin-left: 15%;
+  margin-bottom: 2%;
+  background-color: #3d3151;
+}
+
 .plot {
   text-align: center;
   border-style: solid;
-  width: 50%;
+  width: 40%;
   margin-left: 5%;
-  height: 250px;
+  height: 400px;
   overflow-y: hidden;
   overflow-y: scroll;
   background-color: #3d3151;
 }
 
-.bottom {
-  overflow-y: hidden;
+.commentbox {
+  
+}
+
+.comment {
+  width: 60%;
+  margin-left: 4%;
+  margin-top: 2%;
+  overflow-x: hidden;
   overflow-y: scroll;
-  height: 375px;
-  background-color: #3d3151;
+  position: relative;
+}
+
+.box {
+  position: left;
+  width: fit-content;
+  position: relative;
+  right: -4%;
+  top: -10%;
+  margin-right: 0%;
+
+}
+
+.left {
+  width: 110vw;
+  position: absolute;
+}
+
+.right {
+  width: 110vw;
+  position: absolute;
 }

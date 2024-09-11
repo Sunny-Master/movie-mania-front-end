@@ -8,6 +8,9 @@ import MovieConView from '../../components/MovieConView/MovieConView'
 // services
 import * as movieConService from '../../services/movieConService'
 
+// css
+import styles from './MovieConShow.module.css'
+
 const MovieConShow = (props) => {
   const [movieCon, setMovieCon] = useState(null)
   const { movieConId } = useParams()
@@ -39,8 +42,8 @@ const MovieConShow = (props) => {
     <>
     {movieCon.author._id === user.profile && 
       <>
-      <NavLink to='/movieCons/edit' state={movieCon}><button type='submit'>Edit</button></NavLink>
-      <button onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
+      <NavLink to='/movieCons/edit' state={movieCon}><button type='submit' className={styles.btn1}>Edit</button></NavLink>
+      <button className={styles.btn2} onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
       </>
     } 
     <MovieConView 

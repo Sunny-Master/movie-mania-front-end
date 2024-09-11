@@ -4,6 +4,7 @@ import { useState } from "react"
 //components
 import SearchForm from "../../components/SearchForm/SearchForm"
 import CelebBar from "../../components/CelebBar/CelebBar"
+import CelebPole from "../../components/CelebPole/CelebPole"
 
 // services
 import * as tmdbService from '../../services/tmdbService'
@@ -37,6 +38,7 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
 
   return (  
     <main className={styles.container}>
+      <br />
       <h1>Add Favorites</h1><br />
       <SearchForm searchResults={searchCelebs} type='celeb'/>
       <CelebBar 
@@ -44,34 +46,40 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
         handleAddActor={ handleAddActor } 
         handleAddDirector={ handleAddDirector } 
       />
-      <h1>Favorite Actors</h1>
-      <CelebBar 
-        content={profile.favActors}         
-        handleRemoveCeleb={ handleRemoveCeleb }
-      />
-      <h1>Favorite Directors</h1>
-      <CelebBar 
-        content={profile.favDirectors}
-        handleRemoveCeleb={ handleRemoveCeleb }
-      />
-      <select onChange={handleChange}>
-        <option value="">Select Genre</option>
-        {genreList.map(genre => 
-          <option key={genre.id} value={genre.id}>
-            {genre.name}
-          </option>
-        )}
-      </select><br />
-      <section>
-        <h1>Favorite Genres </h1>
-        {profile.favGenres.map(genre => 
-          // console.log(genre)
-          <section key={genre._id}>
-            <h4 >{genre.genreName}</h4>
-            <button onClick={() => handleRemoveGenre(genre._id)}> 🗑️ </button>
+      <section className={styles.twin}>
+        <div className={styles.scrollA}>
+            <h1>Favorite Actors</h1><br />
+          <CelebPole 
+            content={profile.favActors}         
+            handleRemoveCeleb={ handleRemoveCeleb }
+          />
+        </div>
+        <div className={styles.scrollB}>
+          <h1 className={styles.fixed}>Favorite Directors</h1><br />
+          <CelebPole  
+            content={profile.favDirectors}
+            handleRemoveCeleb={ handleRemoveCeleb }
+          />
+        </div>
+        <div className={styles.genres}>
+          <h1>Favorite Genres </h1><br />
+          <select className={styles.genre} onChange={handleChange}>
+            <option value="">Select Genre</option>
+            {genreList.map(genre => 
+              <option key={genre.id} value={genre.id}>
+                {genre.name}
+              </option>
+            )}
+          </select><br />
+          <section className={styles.wrap}>
+            {profile.favGenres.map(genre => 
+              <section className={styles.genreseach} key={genre._id}>
+                <h4 >{genre.genreName}</h4>
+                <button className={styles.btn6} onClick={() => handleRemoveGenre(genre._id)}> X </button>
+              </section>
+            )}
           </section>
-          
-        )}
+        </div>
       </section>
     </main>
   )
