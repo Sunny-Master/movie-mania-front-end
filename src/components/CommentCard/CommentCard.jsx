@@ -13,18 +13,16 @@ const CommentCard = ({ comment, movieConId, user, handleDeleteComment }) => {
     <article className={styles.card}>
       <header>
         <AuthorInfo content={comment} />
-        {
+        {user && comment.author._id === user.profile &&
           <>
-          {comment.author._id === user.profile &&
             <NavLink to={`/movieCons/${movieConId}/comments/edit`} state={comment}>
               <button className={styles.btn3}>Edit</button>
-            </NavLink>}
-          {comment.author._id === user.profile &&
+            </NavLink>
             <NavLink to={`/movieCons/${movieConId}`} state={comment}>
               <button className={styles.btn4} onClick={() => handleDeleteComment(movieConId, comment._id)}>☠️</button>
-            </NavLink>}
+            </NavLink>
           </>
-          }
+        }
       </header>
       <section className={styles.bottom}>
       <div className={styles.rating}>{comment.rating}/5</div>

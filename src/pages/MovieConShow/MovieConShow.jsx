@@ -40,7 +40,7 @@ const MovieConShow = (props) => {
   if (!movieCon) return <h1>Loading...</h1>
   return ( 
     <>
-    {movieCon.author._id === user.profile && 
+    {user && movieCon.author._id === user.profile && 
       <>
       <NavLink to='/movieCons/edit' state={movieCon}><button type='submit' className={styles.btn1}>Edit</button></NavLink>
       <button className={styles.btn2} onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>

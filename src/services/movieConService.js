@@ -106,9 +106,7 @@ async function deleteComment(movieConId, commentId) {
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`
       }
-      
     })
-    console.log(res);
     return res.json()
   } catch (error) {
     console.log(error)

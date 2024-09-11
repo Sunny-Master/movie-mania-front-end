@@ -13,17 +13,12 @@ const EditComment = () => {
   const { state } = useLocation()
   const { movieConId } = useParams()
   const [formData, setFormData] = useState(state)
-  
 
   const handleChange = (evt) => {
     const value = evt.target.name === 'rating' ? parseInt(evt.target.value) : evt.target.value
     setFormData({ ...formData, [evt.target.name]: value  })
-    console.log(formData);
-    console.log(value);
   }
   
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     await movieConService.updateComment(movieConId, formData)

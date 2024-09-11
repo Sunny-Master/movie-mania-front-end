@@ -61,11 +61,13 @@ const MovieConView = (props) => {
               handleDeleteComment={handleDeleteComment}
               />
             </section>
-            <section className={styles.box}>
-              <div className={styles.commentbox}>
-                <NewComment handleAddComment={handleAddComment}/>
-              </div>
-            </section>
+            { user && 
+              <section className={styles.box}>
+                <div className={styles.commentbox}>
+                  <NewComment handleAddComment={handleAddComment}/>
+                </div>
+              </section>
+            }            
           </div>
         </section>
       </section>
