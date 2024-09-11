@@ -10,3 +10,10 @@ form {
   align-items: center;
 }
 
+.search {
+  background-color: whitesmoke;
+  width: 5vw;
+  font-size: .7vw;
+  border-radius: 20%;
+  font-weight: bold;
+}

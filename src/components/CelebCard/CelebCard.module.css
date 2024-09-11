@@ -99,6 +99,7 @@
   border-radius: 30px;
   margin-right: 8vw;
   margin-top: 27vh;
+  font-size: .7vw;
 }
 
 .addDirector {
@@ -106,6 +107,7 @@
   border-radius: 30px;
   margin-left: 8vw;
   margin-top: 27vh;
+  font-size: .7vw;
 }
 
 .remove {

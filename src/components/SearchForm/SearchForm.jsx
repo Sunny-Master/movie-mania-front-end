@@ -28,7 +28,7 @@ const SearchForm = (props) => {
               onChange={handleChange}
               placeholder={props.type === 'celeb' ? 'Search for Celeb' : 'Search for Movie'}
             />
-          <button type="submit">Search</button>
+          <button className={styles.search} type="submit">Search</button>
       </form>
     </main>
   )
