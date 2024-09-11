@@ -20,7 +20,9 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
 
   const searchCelebs = async (formData) => {
       const celebsData = await tmdbService.getCelebs(formData)
-      setCelebs(celebsData)
+      const celebsInProfile = [...profile.favActors, ...profile.favDirectors]
+      const celebResults = celebsData.filter(celeb => celebsInProfile.every(favCeleb => favCeleb.celebId !== celeb.celebId))
+      setCelebs(celebResults)
   }
   const genreList = genreObjects.filter(genre => 
     profile?.favGenres.every(favGenre => genre.id !== favGenre.genreId)

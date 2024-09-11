@@ -68,10 +68,14 @@ function App() {
   }
 
   const handleAddActor = async (celebData) => {
-    const favActorsData = await profileService.addActor(celebData)
-    // setProfile()
-    setProfile({...profile, favActors: favActorsData})
-    navigate('/add-favorites')
+    try {
+      const favActorsData = await profileService.addActor(celebData)
+      // setProfile()
+      setProfile({...profile, favActors: favActorsData})
+      navigate('/add-favorites')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const handleAddDirector = async (celebData) => {
