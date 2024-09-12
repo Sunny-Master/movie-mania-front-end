@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.title {
+  background-color: #3d3151;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .movieData {
   display: flex;
   margin: 1% 3%;

@@ -55,7 +55,7 @@ const MovieDetails = (props) => {
           </div>  
         </>
         :
-        <button onClick={() => props.handleRemoveMovie(movie._id, contentType)}>-</button>
+        <button onClick={() => props.handleRemoveMovie(movie._id, contentType)}>- {contentType === 'watchList' ? 'List' : 'Fav'}</button>
       }
       <div className={styles.plot}>Plot: {movie.plot}</div>
       <div className="video-player">
