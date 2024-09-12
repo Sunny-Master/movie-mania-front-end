@@ -1,57 +1,115 @@
-input[type="file"] {
-  padding: 0;
-}
-
 .container {
-  position: relative;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border: solid;
-  width: 28vw;
-  height: 40vh;
-  margin-top: 5%;
-  margin-left: 35%;
-  background-color: #3d3151;
 }
 
-.message {
-  margin-top: 0;
-  height: 20px;
-  color: #dd1b16;
-  font-size: 18px;
-  font-weight: bold;
+.container p { 
+  margin: 0; 
+  padding: 0px 0 10px; 
+  width: 100%;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: justify;
+  text-align-last: center;
+  color: #f0908d;
+}
+
+.container section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 28px 21px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 27vw;
-  height: 25vh;
-}
-
-.input {
-  width: 22vw;
-  height: 21vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.label {
   width: 100%;
   display: flex;
+  max-width: 500px;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color:#3d3151;
+  padding: 21px 21px 28px 21px;
+  border: 1px transparent;
+  box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+}
+
+.formHead {
+  display: flex;
+  width: 100%;
   align-items: center;
-  margin-bottom: 8px;
-  font-size: 1.1vw;
+}
+.container input {
+  margin: 7px 0px 14px 0px;
 }
 
-.textbox {
-  width: 16vw;
+.container input, button { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid rgb(220, 220, 220);
 }
 
-.button {
-  margin-left: 2vw;
+.container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.container label {
+  font-weight: 600;
+  margin: 0;
+}
+
+.container button {
+  color: white;
+  font-weight: 600;
+  background: #00a0df;
+  margin: 21px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.container button:disabled {
+  color: rgb(200, 200, 200);
+  background-color: #f8f8f8;
+  cursor: not-allowed;
+}
+
+.container a {
+  border: none;
+  font-size: 14px;
+  background: none;
+  font-weight: 500;
+  margin-top: 14px;
+  text-align: center;
+  color: rgb(200, 200, 200);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #00a0df;
+}
+
+input[type="file"] {
+  padding: 0;
+  border: none;
+}
+
+input::file-selector-button { 
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 14px 28px;
+  margin-right: 28px;
+  text-align: center;
+  border: 1px solid rgb(220, 220, 220);
+  cursor: pointer;
+}
+
