@@ -33,12 +33,12 @@
 }
 
 .container button {
-  width: 11rem;
-  padding: 0.5rem;
-  height: 3.5rem;
+  width: 6rem;
+  height: 3rem;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 1rem;
+  background-color: whitesmoke;
 }
 
 .plot {
@@ -49,4 +49,10 @@
   width: 80%;
   display: flex;
   flex-wrap: wrap;
+}
+
+.select {
+  width: 40vw;
+  display: flex;
+  justify-content: space-evenly;
 }

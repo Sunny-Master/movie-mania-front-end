@@ -1,10 +1,3 @@
-input {
-  margin-left: 16px;
-  padding: 4px 8px;
-  font-size: 16px;
-  width: 300px;
-}
-
 input[type="file"] {
   padding: 0;
 }
@@ -16,7 +9,7 @@ input[type="file"] {
   justify-content: center;
   flex-direction: column;
   border: solid;
-  width: 25vw;
+  width: 28vw;
   height: 40vh;
   margin-top: 5%;
   margin-left: 35%;
@@ -35,21 +28,30 @@ input[type="file"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  width: 27vw;
+  height: 25vh;
+}
+
+.input {
+  width: 22vw;
+  height: 21vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .label {
   width: 100%;
   display: flex;
-  justify-content: end;
   align-items: center;
   margin-bottom: 8px;
+  font-size: 1.1vw;
+}
+
+.textbox {
+  width: 16vw;
 }
 
 .button {
-  margin-left: 16px;
-}
-
-.form > label:last-of-type {
-  margin-bottom: 16px;
+  margin-left: 2vw;
 }

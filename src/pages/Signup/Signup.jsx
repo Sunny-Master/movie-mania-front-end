@@ -82,46 +82,48 @@ const Signup = ({ handleAuthEvt }) => {
       <h1>Sign Up</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
-          Email
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Password
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Confirm Password
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        </label>
-        <label className={styles.label}>
-          Upload Photo
-          <input 
-            type="file" 
-            name="photo" 
-            onChange={handleChangePhoto}
-            ref={imgInputRef}
-          />
-        </label>
+        <section className={styles.input}>
+          <label className={styles.label}>
+            Name
+            <input 
+              type="text" 
+              value={name} 
+              name="name" 
+              onChange={handleChange} 
+              className={styles.textbox}
+            />
+          </label>
+          <label className={styles.label}>
+            Email
+            <input
+              type="text"
+              value={email}
+              name="email"
+              onChange={handleChange}
+              className={styles.textbox}
+            />
+          </label>
+          <label className={styles.label}>
+            Password
+            <input
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+              className={styles.textbox}
+            />
+          </label>
+          <label className={styles.label}>
+            Confirm Password
+            <input
+              type="password"
+              value={passwordConf}
+              name="passwordConf"
+              onChange={handleChange}
+              className={styles.textbox}
+            />
+          </label>
+        </section>  
         <div>
           <Link to="/">Cancel</Link>
           <button
