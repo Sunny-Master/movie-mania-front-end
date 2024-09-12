@@ -5,22 +5,18 @@ const Landing = ({ user }) => {
 
   if (!user) 
     return (
-      <main className={styles.container}>
-        <h1>hello, friend</h1>
+      <main>
+        <section className={styles.container2}>
+        </section>
       </main>
     )
 
   return (
     <main className={styles.container}>
-      <h1>Hello, {user.name}!</h1>
-      <h2>Welcome to Movie Mania</h2>
-      <div>
-        <h1>Whats the point?</h1>
-        <p>Movie Mania is all about</p>
-      </div>
-      <div>
-        <h1>About us!</h1>
-        <p>This is that info</p>
+      <h1 className={styles.head}>Hello, {user.name}! Welcome to Movie Mania</h1>
+      <div className={styles.about}>
+        <h1 className={styles.header}>What is Movie Mania?</h1>
+        <p className={styles.blurb}> Your ultimate movie concept creator and recommendation engine! With Movie Mania, unleash your imagination to craft unique movie ideas and add your favorite actors, directors, and genres to your movie concept. Whether you are a budding filmmaker or a passionate cinephile, Movie Mania provides you with cinematic recommendations, making the discovery of your next favorite movie easier and more exciting than ever. Get ready to ignite your movie experience with Movie Mania!</p>
       </div>
     </main>
   )

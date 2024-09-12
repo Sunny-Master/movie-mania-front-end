@@ -36,21 +36,21 @@ const Recommendations = ({ profile }) => {
 
   return (  
     <main className={styles.container}>
-      <h1>Movie Recommendations</h1><br />
+      <h1 className={styles.line}>Movie Recommendations</h1><br />
       <SearchForm searchResults={searchMovies} type='movie'/>
       {!movies ? 
-        <h1>Loading Your Personalized Movies</h1>
+        <h1 className={styles.line}>Loading Your Personalized Movies</h1>
         : 
         <MovieBar 
           content={moviesResults} 
         />
       }
-      <h1>Favorite Movies</h1>
+      <h1 className={styles.line}>Favorite Movies</h1>
       <MovieBar 
         content={profile.favMovies} 
         contentType='favMovies'
       />
-      <h1>Watch List</h1>
+      <h1 className={styles.line}>Watch List</h1>
       <MovieBar 
         content={profile.watchList} 
         contentType='watchList'

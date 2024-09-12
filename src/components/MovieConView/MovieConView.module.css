@@ -1,5 +1,6 @@
 .header {
   border-style: solid;
+  border-color: black;
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
@@ -23,11 +24,13 @@
 
 .bottom {
   border-style: solid;
+  border-color: black;
   height: 100vh;
 }
 
 .credits {
   border-style: solid;
+  border-color: black;
   width: 30vw;
   margin-right: 5%;
   text-align: center;
@@ -71,6 +74,7 @@ h6 {
 
 .header2 {
   border-style: solid;
+  border-color: black;
   text-align: center;
   width: 40vw;
   margin-left: 30%;
@@ -96,6 +100,7 @@ h6 {
   margin-left: 30%;
   margin-bottom: 2%;
   background-color: #3d3151;
+  border-color: black;
 }
 
 .plot {
@@ -107,6 +112,7 @@ h6 {
   overflow-y: hidden;
   overflow-y: auto;
   background-color: #3d3151;
+  border-color: black;
 }
 
 .comment {

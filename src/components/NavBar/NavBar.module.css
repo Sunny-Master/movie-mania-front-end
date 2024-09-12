@@ -31,12 +31,12 @@
 }
 
 .header {
-  font-size: 28px;
+  font-size: 2.4vw 2.4vh;
   text-align: left;
 }
 
 .container li {
-  margin-left: 35px;
+  margin-left: 5%;
   text-align: right;
 }
 
@@ -45,7 +45,7 @@
     padding-left: 0px;
   }
   .container li {
-    font-size: 15px;
+    font-size: 2vw;
   }
 }
 
@@ -58,4 +58,5 @@ img {
   position: absolute;
   margin-left: 15%;
   margin-bottom: 1%;
+  font-size: 2vw;
 }
