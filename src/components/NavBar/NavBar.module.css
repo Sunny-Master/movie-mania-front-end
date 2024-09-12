@@ -53,3 +53,9 @@ img {
   background: black;
   height: fit-content;
 }
+
+.slogan {
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 15%;
+}
