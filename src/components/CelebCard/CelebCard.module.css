@@ -98,15 +98,18 @@
   position: absolute;
   border-radius: 30px;
   margin-right: 8vw;
-  margin-top: 27vh;
+  margin-top: 25vh;
   font-size: .7vw;
+  width: 2vw;
+  
 }
 
 .addDirector {
   position: absolute;
   border-radius: 30px;
+  width: 2vw;
   margin-left: 8vw;
-  margin-top: 27vh;
+  margin-top: 25vh;
   font-size: .7vw;
 }
 
