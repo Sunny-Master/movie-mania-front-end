@@ -40,17 +40,19 @@ const MovieDetails = (props) => {
       </section>
       {!contentType ? 
         <>
-          <button 
-            className={styles.addFav} 
-            onClick={() => props.handleAddMovie(movie)}
-          >
-            +Fav
-          </button>
-          <button className={styles.addWatch}
-          onClick={() => props.handleAddToWatchList(movie)}
-          >
-            +List
-          </button>
+          <div className={styles.select}>
+            <button 
+              onClick={() => props.handleAddMovie(movie)}
+              className={styles.addFav} 
+            >
+              +Fav
+            </button>
+            <button className={styles.addWatch}
+            onClick={() => props.handleAddToWatchList(movie)}
+            >
+              +List
+            </button>
+          </div>  
         </>
         :
         <button onClick={() => props.handleRemoveMovie(movie._id, contentType)}>-</button>

@@ -9,6 +9,7 @@ const NavBar = ({ user, handleLogout }) => {
     <>
     <nav className={styles.container}>
       <h1 className={styles.header}>Movie Mania</h1>
+      <h3 className={styles.slogan}>Lights, Camera, Create!</h3>
       {user ?
         <ul>
           <li><NavLink to="/movieCons">MovieCons</NavLink></li>

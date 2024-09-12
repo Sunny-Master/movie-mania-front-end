@@ -16,31 +16,33 @@
   position: absolute;
   height: 30px;
   bottom: 10px;
-  right: 27%;
+  right: 21%;
   border-radius: 10px;
   font-weight: bold;
   background-color: whitesmoke;
-  font-size: 15px;
+  font-size: 1.2vw;
 }
 
 .h1 {
   position: absolute;
   top: 3%;
+  font-size: 1.7vw;
 }
 
 .label {
   position: absolute;
   color: whitesmoke;
   top: 15%;
-  left: 35%;
+  left: 30%;
+  font-size: 1.5vw;
 }
 
 .textarea {
   position: absolute;
-  height: 220px;
-  width: 200px;
+  height: 20vh;
+  width: 16vw;
   border-radius: 5%;
-  left: 18%;
+  left: 10%;
   top: 30%;
 }
 
