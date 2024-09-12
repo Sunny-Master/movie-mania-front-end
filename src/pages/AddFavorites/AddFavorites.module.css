@@ -76,4 +76,6 @@ option {
 
 .line {
   font-size: 1.5vw;
+  border: solid black;
+  background-color: #3d3151;
 }

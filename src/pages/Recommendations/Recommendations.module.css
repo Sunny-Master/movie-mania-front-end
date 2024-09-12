@@ -5,7 +5,8 @@
   margin-top: 1%;
 }
 
-h1 {
+.line {
   background-color: #3d3151;
   padding: 5px;
+  border: solid black;
 }

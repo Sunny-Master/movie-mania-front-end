@@ -19,3 +19,9 @@
   font-weight: bold;
   border-radius: 1rem;
 }
+
+.name {
+  border: solid;
+  border-color: black;
+  background-color: #3d3151;
+}
