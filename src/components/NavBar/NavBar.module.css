@@ -7,9 +7,18 @@
   position: fixed; 
   padding: 14px 21px;
   align-items: center;
+  justify-content: space-between;
   background-color: #3d3151;
   color: whitesmoke;
-  border-bottom: 1px solid rgb(200, 200, 200);
+  /* border-bottom: solid black; */
+  min-width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .navlink {
@@ -22,31 +31,21 @@
 
 .container ul {
   margin: 0;
-  width: 100%;
   display: flex;
   list-style: none;
+  font-size: 1.25rem;
   font-weight: bold;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  min-width: 400px;
+}
+
+.loggedIn {
+  width: 50%;
 }
 
 .header {
-  font-size: 2.4vw 2.4vh;
   text-align: left;
-}
-
-.container li {
-  margin-left: 5%;
-  text-align: right;
-}
-
-@media only screen and (max-width: 414px) {
-  .container ul {
-    padding-left: 0px;
-  }
-  .container li {
-    font-size: 2vw;
-  }
 }
 
 img {
@@ -54,9 +53,31 @@ img {
   height: fit-content;
 }
 
-.slogan {
-  position: absolute;
-  margin-left: 15%;
-  margin-bottom: 1%;
-  font-size: 2vw;
+@media only screen and (max-width: 1450px) {
+  .loggedIn {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container ul {
+    padding-left: 0px;
+    font-size: 1rem;
+  }
+  .slogan{
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 750px){
+  .container {
+    height: 9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container ul {
+    margin: 1rem 2rem;
+    justify-content: space-between;
+  }
 }

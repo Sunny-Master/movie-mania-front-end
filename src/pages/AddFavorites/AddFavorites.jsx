@@ -40,8 +40,7 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
 
   return (  
     <main className={styles.container}>
-      <br />
-      <h1 className={styles.line}>Add Favorites</h1><br />
+      <h1 className={styles.title2}>Add Favorites</h1><br />
       <SearchForm searchResults={searchCelebs} type='celeb'/>
       <CelebBar 
         content={celebs} 

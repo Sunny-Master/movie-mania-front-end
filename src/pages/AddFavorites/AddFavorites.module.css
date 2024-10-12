@@ -74,8 +74,11 @@ option {
   overflow-y: auto;
 }
 
-.line {
-  font-size: 1.5vw;
-  border: solid black;
-  background-color: #3d3151;
+.title2 {
+  width: 100%;
+  text-align: center;
+  background-color: whitesmoke;
+  color: #3d3151;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }

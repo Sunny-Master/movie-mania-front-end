@@ -36,10 +36,10 @@ const Recommendations = ({ profile }) => {
 
   return (  
     <main className={styles.container}>
-      <h1 className={styles.line}>Movie Recommendations</h1><br />
+      <h1 className={styles.title2}>Movie Recommendations</h1><br />
       <SearchForm searchResults={searchMovies} type='movie'/>
       {!movies ? 
-        <h1 className={styles.line}>Loading Your Personalized Movies</h1>
+        <h1 className={styles.loading}>Loading Your Personalized Movies...</h1>
         : 
         <MovieBar 
           content={moviesResults} 
