@@ -23,16 +23,16 @@ const MovieDetails = (props) => {
           </section>
           <section className={styles.movieInfo}>
             <section>
-              <label>Genres:</label>
+              <label>Genres:&nbsp;</label>
               {genreList.map(genre =>
                 <span key={genre.id}>{genre.name}</span>
               )}
             </section> <br />
             <div>Director: {movie.credits.director} </div><br />
             <section>
-              <label>Cast:</label>
+              <label>Cast:&nbsp;</label>
               {movie.credits.cast.map((actor, idx) =>
-                <div key={idx}>{actor}</div>
+                <span key={idx}>{actor}</span>
               )}
             </section> <br />
             <div className={styles.rating}>Rating: {movie.rating}</div><br />

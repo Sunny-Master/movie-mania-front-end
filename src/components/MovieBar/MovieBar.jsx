@@ -6,17 +6,15 @@ import styles from './MovieBar.module.css'
 
 const MovieBar = ({ content, contentType}) => {
   return ( 
-    <>
-      <div className={styles.scroll}>
-          {content.map(movie => 
-            <MovieCard 
-              key={movie.movieId} 
-              content={movie}
-              contentType={contentType}
-            />
-          )}
-      </div>
-    </>
+    <div className={styles.scroll}>
+        {content.map(movie => 
+          <MovieCard 
+            key={movie.movieId} 
+            content={movie}
+            contentType={contentType}
+          />
+        )}
+    </div>
   )
 }
 

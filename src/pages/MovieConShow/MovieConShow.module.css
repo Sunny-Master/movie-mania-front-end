@@ -1,23 +1,130 @@
-.btn1 {
-  position: absolute;
-  right: 12%;
-  margin-top: 1%;
-  width: 60px;
-  height: 30px;
-  border-radius: 10px;
-  font-weight: bold;
-  background-color: whitesmoke;
-  font-size: 15px;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 
-.btn2 {
-  position: absolute;
-  left: 12%;
-  margin-top: 1%;
-  width: 60px;
-  height: 30px;
-  border-radius: 10px;
-  font-weight: bold;
+.title2 {
+  width: 100%;
+  text-align: center;
   background-color: whitesmoke;
-  font-size: 15px;
+  color: #3d3151;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  margin: 0;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.title2 h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.btn {
+  background-color: #3d3151;
+  color: whitesmoke;
+  width: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin: 0;
+}
+
+.movieConDetails {
+  width: 80%;
+  position: relative;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.movieConData {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #3d3151;
+  border-radius: 1rem;
+  gap: 0.25rem;
+  height: 18vh;
+  overflow-y: hidden;
+  overflow-y: auto;
+}
+
+.movieConData label {
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.movieConData span {
+  font-style: normal;
+  font-size: 0.8rem;
+}
+
+span:nth-of-type(n + 2) {
+  &::before {
+    content: ",  ";
+  }
+}
+
+.line {
+  background-color: whitesmoke;
+  color: #3d3151;
+  padding: 0.5rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.credits {
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  background-color: #3d3151;
+}
+
+p {
+  margin: 5%;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 1vw;
+}
+
+.name {
+  font-size: 1.2vw;
+}
+
+h6 {
+  margin: 0%;
+}
+
+.direct {
+  font-size: 1.2vw;
+}
+
+.titled {
+  text-decoration: underline;
+  font-size: 1.5vw;
+}
+
+.comments {
+  height: 35vh;
+  width: 100%;
+  background-color: #3d3151;
+  border-radius: 1rem;
+  padding: 0.7rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+}
+
+

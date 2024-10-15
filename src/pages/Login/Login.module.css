@@ -1,67 +1,89 @@
-input {
-  margin-left: 16px;
-  padding: 4px 8px;
-  font-size: 16px;
-  width: 300px;
-}
-
-input[type="file"] {
-  padding: 0;
-}
-
-.head2 {
-  position: absolute;
-  top: 5%;
-}
-
 .container {
-  position: relative;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  border: solid;
-  width: 25vw;
-  height: 35vh;
-  margin-top: 5%;
-  margin-left: 35%;
-  background-color: #3d3151;
 }
 
-.message {
-  position: absolute;
-  bottom: 0%;
-  height: 3vh;
+.container p { 
+  margin: 0; 
+  padding: 0px 0 10px; 
+  width: 100%;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: justify;
+  text-align-last: center;
   color: #f0908d;
-  font-size: 1.5vw;
-  font-weight: bold;
 }
 
 .form {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.input {
-  width: 15vw;
-}
-
-.label {
   width: 100%;
   display: flex;
-  justify-content: end;
+  max-width: 500px;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color:#3d3151;
+  padding: 21px 21px 28px 21px;
+  border: 1px transparent;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.formHead {
+  display: flex;
+  width: 100%;
   align-items: center;
-  margin-bottom: 8px;
+}
+.container input {
+  margin: 7px 0px 14px 0px;
 }
 
-.button {
-  margin-left: 16px;
-  font-size: 1vw;
-  background-color: whitesmoke;
+.container input, button { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid rgb(220, 220, 220);
 }
 
-.form > label:last-of-type {
-  margin-bottom: 16px;
+.container div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.container label {
+  font-weight: 600;
+  margin: 0;
+}
+
+.container button {
+  color: white;
+  font-weight: 600;
+  background: #00a0df;
+  margin: 21px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.container button:disabled {
+  color: rgb(200, 200, 200);
+  background-color: #f8f8f8;
+  cursor: not-allowed;
+}
+
+.container a {
+  border: none;
+  font-size: 14px;
+  background: none;
+  font-weight: 500;
+  margin-top: 14px;
+  text-align: center;
+  color: rgb(200, 200, 200);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #00a0df;
+}
+

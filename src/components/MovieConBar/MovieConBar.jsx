@@ -6,11 +6,11 @@ import styles from './MovieConBar.module.css'
 
 const MovieConBar = ({movieCons}) => {
   return (  
-    <main className={styles.container}>
-    {movieCons.map(movieCon => 
-      <MovieConCard content={movieCon} key={movieCon._id} />
-    )}
-  </main>
+    <section className={styles.container}>
+      {movieCons.map(movieCon => 
+        <MovieConCard content={movieCon} key={movieCon._id} />
+      )}
+    </section>
   )
 }
 

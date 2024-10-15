@@ -37,24 +37,26 @@ const Recommendations = ({ profile }) => {
   return (  
     <main className={styles.container}>
       <h1 className={styles.title2}>Movie Recommendations</h1><br />
-      <SearchForm searchResults={searchMovies} type='movie'/>
-      {!movies ? 
-        <h1 className={styles.loading}>Loading Your Personalized Movies...</h1>
-        : 
+      <section className={styles.shadedBG}>
+        <SearchForm searchResults={searchMovies} type='movie'/>
+        {!movies ? 
+          <h1 className={styles.loading}>Loading Your Personalized Movies...</h1>
+          : 
+          <MovieBar 
+            content={moviesResults} 
+          />
+        }
+        <h4 className={styles.line}>Favorite Movies</h4>
         <MovieBar 
-          content={moviesResults} 
+          content={profile.favMovies} 
+          contentType='favMovies'
         />
-      }
-      <h1 className={styles.line}>Favorite Movies</h1>
-      <MovieBar 
-        content={profile.favMovies} 
-        contentType='favMovies'
-      />
-      <h1 className={styles.line}>Watch List</h1>
-      <MovieBar 
-        content={profile.watchList} 
-        contentType='watchList'
-      />
+        <h4 className={styles.line}>Watch List</h4>
+        <MovieBar 
+          content={profile.watchList} 
+          contentType='watchList'
+        />
+      </section>
     </main>
   )
 }

@@ -2,6 +2,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .container p { 
@@ -15,17 +16,6 @@
   color: #f0908d;
 }
 
-.container section {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  padding: 28px 21px;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .form {
   width: 100%;
   display: flex;
@@ -35,9 +25,9 @@
   background-color:#3d3151;
   padding: 21px 21px 28px 21px;
   border: 1px transparent;
-  box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
-  -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
-  -webkit-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .formHead {

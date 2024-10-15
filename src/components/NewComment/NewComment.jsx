@@ -20,31 +20,34 @@ const NewComment = (props) => {
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <h1 className={styles.h1}>New Comment</h1><br />
-      <label className={styles.rating} htmlFor="rating-input">Rating:</label>
-        <select
-          required
-          name="rating"
-          id="rating-input"
-          value={formData.rating}
+      <h4>New Comment</h4>
+      <section className={styles.commentBox}>
+        <section className={styles.selectBox}>
+          <label className={styles.rating} htmlFor="rating-input">Rating</label>
+          <select
+            required
+            name="rating"
+            id="rating-input"
+            value={formData.rating}
+            onChange={handleChange}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </section>
+        <textarea 
+          name="content" 
+          value={formData.content}
+          placeholder='Add a Comment'
           onChange={handleChange}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-        <br />
-      <textarea 
-        name="content" 
-        value={formData.content}
-        placeholder='Add a Comment'
-        onChange={handleChange}
-        className={styles.text}
-      />
-        <br />
-      <button className={styles.btn5} type="submit">Add Comment</button>
+          className={styles.text}
+          required
+        />
+        <button className={styles.btn5} type="submit">Add Comment</button>
+      </section>
     </form>
   )
 }
