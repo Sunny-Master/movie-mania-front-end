@@ -23,20 +23,29 @@ const MovieDetails = (props) => {
           </section>
           <section className={styles.movieInfo}>
             <section>
-              <label>Genres:&nbsp;</label>
+              <label>Genres: &nbsp;&nbsp;</label>
               {genreList.map(genre =>
                 <span key={genre.id}>{genre.name}</span>
               )}
-            </section> <br />
-            <div>Director: {movie.credits.director} </div><br />
+            </section>
             <section>
-              <label>Cast:&nbsp;</label>
+              <label>Director: &nbsp;&nbsp;</label> 
+              <span>{movie.credits.director} </span>
+            </section>
+            <section>
+              <label>Cast: &nbsp;&nbsp;</label>
               {movie.credits.cast.map((actor, idx) =>
                 <span key={idx}>{actor}</span>
               )}
-            </section> <br />
-            <div className={styles.rating}>Rating: {movie.rating}</div><br />
-            <div className={styles.date}>Release Date: {movie.releaseDate}</div><br />
+            </section>
+            <section>
+              <label>Rating: &nbsp;&nbsp;</label>
+              <span>{movie.rating}</span>
+            </section>
+            <section>
+              <label>Release Date: &nbsp;&nbsp;</label>
+              <span>{movie.releaseDate}</span>
+            </section>
           </section>
         </section>
         {!contentType ? 
@@ -46,19 +55,22 @@ const MovieDetails = (props) => {
                 onClick={() => props.handleAddMovie(movie)}
                 className={styles.addFav} 
               >
-                +Fav
+                ➕Fav
               </button>
               <button className={styles.addWatch}
               onClick={() => props.handleAddToWatchList(movie)}
               >
-                +List
+                ➕List
               </button>
             </div>  
           </>
           :
           <button onClick={() => props.handleRemoveMovie(movie._id, contentType)}>- {contentType === 'watchList' ? 'List' : 'Fav'}</button>
         }
-        <div className={styles.plot}>Plot: {movie.plot}</div>
+        <div className={styles.plot}>
+          <label>Plot: &nbsp;&nbsp;</label>
+          <span>{movie.plot}</span>
+        </div>
         <div className="video-player">
           <iframe
             width="560"

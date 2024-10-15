@@ -16,7 +16,6 @@ const SearchForm = (props) => {
     props.searchResults(formData)
   }
 
-
   return (  
     <section className={styles.container}>
       <form autoComplete="off" onSubmit={handleSubmit}>

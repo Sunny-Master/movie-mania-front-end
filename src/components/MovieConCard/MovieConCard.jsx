@@ -13,24 +13,26 @@ const MovieConCard = ({ content }) => {
     <NavLink to={`/movieCons/${content._id}`}>
       <article className={styles.container}>
         <header className={styles.design}>
-          <AuthorInfo content={content} /> <br />
-          <h1 className={styles.title}>{content.title}</h1>
+          <AuthorInfo content={content} />
         </header>
         <section className={styles.data}>
-          <div className={styles.data2}>
-            <label>Genres: </label>
+          <h1 className={styles.title}>{content.title}</h1>
+          <section className={styles.credit}>
+            <label>Director: &nbsp;</label>
+            <span>{content.director}</span>
+          </section>
+          <section className={styles.credit}>
+            <label>Genres: &nbsp;</label>
             {content.genres.map((genre, idx) => 
-              <h4 key={idx}>{genre}</h4>
+              <span key={idx}>{genre}</span>
             )}
-          </div>
-        </section>
-        <section className={styles.credits}>
-          
-            <label>Cast: </label>
+          </section>
+          <section className={styles.credit}>
+            <label>Cast: &nbsp;</label>
             {content.actors.map((actor, idx) => 
-              <h4 key={idx}>{actor}</h4>
+              <span key={idx}>{actor}</span>
             )}
-          
+          </section>
         </section>
       </article>
     </NavLink>
