@@ -38,14 +38,16 @@ const Recommendations = ({ profile }) => {
     <main className={styles.container}>
       <h1 className={styles.title2}>Movie Recommendations</h1><br />
       <section className={styles.shadedBG}>
-        <SearchForm searchResults={searchMovies} type='movie'/>
-        {!movies ? 
-          <h1 className={styles.loading}>Loading Your Personalized Movies...</h1>
-          : 
-          <MovieBar 
-            content={moviesResults} 
-          />
-        }
+        <section className={styles.top}>
+          <SearchForm searchResults={searchMovies} type='movie'/>
+          {!movies ? 
+            <h1 className={styles.loading}>Loading Your Personalized Movies...</h1>
+            : 
+            <MovieBar 
+              content={moviesResults} 
+            />
+          }
+        </section>
         <section className={styles.twin}>
           <div className={styles.scrollA}>
             <h4 className={styles.line}>Favorite Movies</h4>

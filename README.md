@@ -1,4 +1,4 @@
-![Movie Mania](./src/assets/screenshot.png)
+![Movie Mania](./src/assets/movie-mania-ss.png)
 
 [Launch App](https://main--moviemaniacproject.netlify.app/)
 
