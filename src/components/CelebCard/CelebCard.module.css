@@ -1,44 +1,54 @@
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
-  background-color: transparent;
-  width: 11.7vw;
-  height: 30vh;
+  width: 185px;
+  height: 278px;
+  margin: 0 10px;
   perspective: 1000px;
 }
 
 /* This container is needed to position the front and back side */
 .flipCardInner {
-  position: absolute;
-  width: 11.6vw;
-  height: 30vh;
-  text-align: center;
-  transition: transform 0.8s;
+  width: inherit;
+  height: inherit;
+  position: relative;
   transform-style: preserve-3d;
+  transition: .6s .1s;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flipCard:hover .flipCardInner {
+.flipCard:hover .flipCardInner,
+.flipCard:focus-within .flipCardInner {
   transform: rotateY(180deg);
 }
 
 /* Position the front and back side */
 .flipCardFront, .flipCardBack {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
   position: absolute;
-  width: 11vw;
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  -webkit-backface-visibility: hidden; /* Safari */
+  top: 0;
+  left: 0;
+  overflow: hidden;
   backface-visibility: hidden;
 }
 
 /* Style the front side (fallback if image is missing) */
 .flipCardFront {
-  /* background-color: #bbbbbb; */
-  color: black;
-  border-radius: 10px;
+  transform: rotateY(0deg);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+}
+
+.flipCardFront h4 {
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
 
 /* Style the back side */
@@ -47,72 +57,57 @@
   color: white;
   transform: rotateY(180deg);
   font-size: 0.85rem;
-  width: 11vw;
-  height: 31vh;
-  border-radius: 10px;
   border: solid whitesmoke;
-}
-
-.img {
-  width: 11vw;
-  height: 30vh;
-  border-radius: 10px;
-  border: solid black;
-}
-
-.cardData {
+  z-index: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  margin: 0%;
+  padding: 0.75rem;
 }
 
 .name {
   font-weight: bolder;
-  margin-top: 2%;
-  font-size: 1vw;
+  font-size: 1rem;
 }
 
 .skill {
-  position: relative;
-  margin-left: -10%;
-  font-size: .7vw;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
-.skills {
-  position: relative;
-  margin-left: 15%;
-  font-size: .7vw;
-}
-
-.movie {
-  font-size: .7vw;
+.cardData label, .movies label {
+  font-style: italic;
+  font-size: 0.75rem;
 }
 
 .movies {
-  text-decoration: underline;
-  font-weight: bold;
-  font-size: .9vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.addActor {
-  position: absolute;
-  border-radius: 30px;
-  margin-right: 8vw;
-  margin-top: 27vh;
-  font-size: .7vw;
+.flipCardBack ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.25rem 1.25rem;
+  padding: 0;
 }
 
-.addDirector {
-  position: absolute;
-  border-radius: 30px;
-  margin-left: 8vw;
-  margin-top: 27vh;
-  font-size: .7vw;
+.actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.remove {
-  position: absolute;
-  border-radius: 30px;
-  margin-top: 27vh;
-  font-size: .6vw;
+.flipCardBack button {
+  border-radius: 10px;
+  width: 4.25rem;
+  padding: 0.45rem;
+  color: #3d3151;
+  font-size: 0.75rem;
 }
