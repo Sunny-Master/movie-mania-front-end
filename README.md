@@ -1,4 +1,4 @@
-![Movie Mania](./src/assets/screenshot.png)
+![Movie Mania](./src/assets/movie-mania-ss.png)
 
 [Launch App](https://main--moviemaniacproject.netlify.app/)
 
@@ -58,6 +58,9 @@ Jonathan Cabrera [LinkedIn](www.linkedin.com/in/jonathan-cabrera-474121311) [Git
 [Cloudinary](https://cloudinary.com)
 
 [Netlify](https://www.netlify.com)
+
+Background Image by <a href="https://pixabay.com/users/jozefm84-10215106/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4998849">Jozef Mikulcik</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4998849">Pixabay</a>
+  
 
 ## Stretch Goals
 - [x] Included movie trailers

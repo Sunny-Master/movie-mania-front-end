@@ -12,8 +12,7 @@ const MovieConView = (props) => {
   const { movieCon, handleAddComment, handleDeleteComment, user } = props
 
   return ( 
-    <>
-    <main className={styles.main}>
+    <section className={styles.container}>
       {!movieCon.director ?
         <section className={styles.header}>
           <h1> <span className={styles.name}>{movieCon.author.name}'s</span> <span className={styles.titled}>{movieCon.title}</span></h1>
@@ -71,8 +70,7 @@ const MovieConView = (props) => {
           </div>
         </section>
       </section>
-    </main>
-    </> 
+    </section>
   )
 }
 

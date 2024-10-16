@@ -1,19 +1,28 @@
-form {
-  display: flex;
-  border-radius: 25%;
-  gap: 2%;
+.container {
+  width: fit-content;
+  background-color: #3d3151;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  text-align: center;
 }
 
-.container {
-  height: 100%;
+form {
   display: flex;
-  align-items: center;
+  border-radius: 1rem;
+  gap: 0.5rem;
 }
 
 .search {
-  background-color: whitesmoke;
-  width: 5vw;
-  font-size: .7vw;
-  border-radius: 20%;
+  background-color: #3d3151;
+  color: whitesmoke;
+  width: 5rem;
+  font-size: 0.75rem;
+  border-radius: 10px;
   font-weight: bold;
+  padding: 0.5rem;
+}
+
+input {
+  text-align: center;
 }

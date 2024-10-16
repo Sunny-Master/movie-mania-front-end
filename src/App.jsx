@@ -110,19 +110,25 @@ function App() {
     const newMovieCon = await movieConService.create(movieConFormData)
     setMovieCons([newMovieCon, ...movieCons])
     setProfile({...profile, movieConcepts: [newMovieCon, ...profile.movieConcepts]})
-    navigate('/movieCons')
+    navigate('/dashboard')
   }
 
   const handleUpdateMovieCon = async (formData) => {
     const updatedMovieCon = await movieConService.update(formData)
     setMovieCons(movieCons.map(movieCon => updatedMovieCon._id === movieCon._id ? updatedMovieCon : movieCon))
-    navigate('/movieCons')
+    let userMovieCons = profile.movieConcepts
+    const updatedUserMovieCons = userMovieCons.map(movieCon=>movieCon._id === updatedMovieCon._id ? updatedMovieCon : movieCon )
+    setProfile({...profile, movieConcepts: updatedUserMovieCons})
+    navigate('/dashboard')
   }
 
   const handleDeleteMovieCon = async (movieConId) => {
     const deletedMovieCon = await movieConService.delete(movieConId)
     setMovieCons(movieCons.filter(movieCon => movieCon._id !== deletedMovieCon._id))
-    navigate('/movieCons')
+    let userMovieCons = profile.movieConcepts
+    const updatedUserMovieCons = userMovieCons.filter(movieCon => movieCon._id !== deletedMovieCon._id)
+    setProfile({...profile, movieConcepts: updatedUserMovieCons})
+    navigate('/dashboard')
   }
 
   const handleRemoveCeleb = async (celebData) => {

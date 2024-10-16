@@ -6,8 +6,11 @@ import styles from './MovieBar.module.css'
 
 const MovieBar = ({ content, contentType}) => {
   return ( 
-    <>
-      <div className={styles.scroll}>
+    <div className={styles.scroll}>
+      {!content.length ? 
+        <h1>Your Movies will appear here..</h1>
+        :
+        <>
           {content.map(movie => 
             <MovieCard 
               key={movie.movieId} 
@@ -15,8 +18,9 @@ const MovieBar = ({ content, contentType}) => {
               contentType={contentType}
             />
           )}
-      </div>
-    </>
+        </>
+      }
+    </div>
   )
 }
 

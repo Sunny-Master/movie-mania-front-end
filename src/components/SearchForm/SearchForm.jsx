@@ -16,9 +16,8 @@ const SearchForm = (props) => {
     props.searchResults(formData)
   }
 
-
   return (  
-    <main className={styles.container}>
+    <section className={styles.container}>
       <form autoComplete="off" onSubmit={handleSubmit}>
             <input 
               type="text"
@@ -30,7 +29,7 @@ const SearchForm = (props) => {
             />
           <button className={styles.search} type="submit">Search</button>
       </form>
-    </main>
+    </section>
   )
 }
 

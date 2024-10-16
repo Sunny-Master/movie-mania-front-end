@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 
 // components
-import MovieConView from '../../components/MovieConView/MovieConView'
+// import MovieConView from '../../components/MovieConView/MovieConView'
+import NewComment from '../../components/NewComment/NewComment'
+import Comments from '../../components/Comments/Comments'
 
 // services
 import * as movieConService from '../../services/movieConService'
@@ -39,20 +41,46 @@ const MovieConShow = (props) => {
   
   if (!movieCon) return <h1>Loading...</h1>
   return ( 
-    <>
-    {user && movieCon.author._id === user.profile && 
-      <>
-      <NavLink to='/movieCons/edit' state={movieCon}><button type='submit' className={styles.btn1}>Edit</button></NavLink>
-      <button className={styles.btn2} onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
-      </>
-    } 
-    <MovieConView 
-      movieCon={movieCon} 
-      user={user} 
-      handleAddComment={handleAddComment}
-      handleDeleteComment={handleDeleteComment}
-      />
-    </>
+    <main className={styles.container}>
+      <section className={styles.title2}>
+        {user && movieCon.author._id === user.profile && 
+            <NavLink to='/movieCons/edit' state={movieCon}><button type='submit' className={styles.btn}>Edit</button></NavLink>
+        }
+        <h1>{movieCon.title}</h1>
+        {user && movieCon.author._id === user.profile && 
+            <button className={styles.btn} onClick={() => props.handleDeleteMovieCon(movieCon._id)}>Delete</button>
+        }
+      </section>
+      <section className={styles.movieConDetails}>
+        <section className={styles.movieConData}>
+          <label>Created By: &nbsp;&nbsp;<span>{movieCon.author.name}</span></label>
+          <label>Genre:&nbsp;&nbsp;&nbsp; 
+              {movieCon.genres.map((genre, idx) => 
+                <span key={idx}>{genre}</span>
+              )}
+          </label>
+          <label>Directed By: &nbsp;&nbsp;<span>{movieCon.director}</span></label>
+          <label>Starring:&nbsp;&nbsp;&nbsp; 
+              {movieCon.actors.map((actor, idx) => 
+                <span key={idx}>{actor}</span>
+              )}
+          </label>
+          <label>Synopsis: &nbsp;&nbsp;<span>{movieCon.plot}</span></label>
+        </section >
+        <h4 className={styles.line}>Comments</h4>
+        { user && 
+          <NewComment handleAddComment={handleAddComment}/>
+        }            
+        <div className={styles.comments}>
+          <Comments 
+            comments={movieCon.comments} 
+            user={props.user} 
+            movieConId={movieCon._id}
+            handleDeleteComment={handleDeleteComment}
+          />
+        </div>
+      </section>
+    </main>
   )
 }
 

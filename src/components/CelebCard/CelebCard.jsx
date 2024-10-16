@@ -6,36 +6,46 @@ const CelebCard = ({ content, handleAddActor, handleAddDirector, handleRemoveCel
     <>
       <div className={styles.flipCard}>
         <div className={styles.flipCardInner}>
-          <div className={styles.flipCardFront}>
-            <img className={styles.img} src={content.imageUrl} alt={content.name}  />
+          <div 
+            className={styles.flipCardFront}
+            style={{ background: `url(${content.imageUrl})` }}
+          >
+            <h4>{content.name}</h4>
           </div>
           <div className={styles.flipCardBack}>
-            <div className={styles.name}>{content.name}</div><br />
-            <div className={styles.cardData}>
-              <label className={styles.skill}>Known for: </label>
-              <p className={styles.skills}>{content.skill}</p>
-            </div><br />
-            <div className={styles.movies}>Movies</div>
-            <div className={styles.movie}> {content.knownFor.map((movie, idx) => 
-              <p key={idx}>{movie}</p>)}</div>
-              {handleAddActor ? 
-                <>
-                  <button 
-                    className={styles.addActor} 
-                    onClick={() => handleAddActor(content)}
-                  >
-                    +A
-                  </button>
-                  <button className={styles.addDirector}
-                  onClick={() => handleAddDirector(content)}
-                  >
-                    +D
-                  </button>
-                </>
-                :
-                <button className={styles.remove}
-                onClick={() => handleRemoveCeleb(content)}>Remove</button>
-              }
+            <section className={styles.skill}>
+              <div className={styles.name}>{content.name}</div>
+              <div className={styles.cardData}>
+                <label>Known for: &nbsp;</label>
+                <span>{content.skill}</span>
+              </div>
+            </section>
+            <section className={styles.movies}>
+              <label>Top Movies:</label>
+              <ul className={styles.movie}> 
+                {content.knownFor.map((movie, idx) => 
+                <li key={idx}>{movie}</li>)}
+              </ul>
+            </section>
+            
+            {handleAddActor ? 
+              <section className={styles.actions}>
+                <button 
+                  className={styles.addActor} 
+                  onClick={() => handleAddActor(content)}
+                >
+                  ➕Act
+                </button>
+                <button className={styles.addDirector}
+                onClick={() => handleAddDirector(content)}
+                >
+                  ➕Dir
+                </button>
+              </section>
+              :
+              <button className={styles.remove}
+              onClick={() => handleRemoveCeleb(content)}>➖Fav</button>
+            }
           </div>
         </div>
       </div>

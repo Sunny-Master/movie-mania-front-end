@@ -45,9 +45,11 @@ const LoginPage = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <h1 className={styles.head2}>Log In</h1>
-      <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.formHead}>
+          <h1 className={styles.head2}>Log In</h1>
+          <p className={styles.message}>{message}</p>
+        </div>
         <label className={styles.label}>
           Email
           <input

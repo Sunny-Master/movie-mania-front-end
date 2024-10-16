@@ -26,34 +26,39 @@ const EditComment = () => {
   }
 
   return (
-  <section className={styles.container2}>
-    <h1 className={styles.h1}>Edit Your Comment</h1>
-    <form onSubmit={handleSubmit}>
-      <textarea 
-        className={styles.textarea}
-        name="content" 
-        value={formData.content}
-        placeholder='Edit a Comment'
-        onChange={handleChange}
-      />
-      <label className={styles.label} htmlFor="rating-input">Rating</label>
-        <select
-          className={styles.select}
-          required
-          name="rating"
-          id="rating-input"
-          value={formData.rating}
-          onChange={handleChange}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      <button className={styles.btn4} type="submit">Submit Comment</button>
-    </form>
-  </section>
+
+    <main className={styles.container}>
+      <h1 className={styles.title2}>Edit Your Comment</h1>
+      <section className={styles.main}>
+        <form onSubmit={handleSubmit}>
+          <textarea 
+            className={styles.textarea}
+            name="content" 
+            value={formData.content}
+            placeholder='Edit a Comment'
+            onChange={handleChange}
+          />
+          <div>
+            <label className={styles.label} htmlFor="rating-input">Rating: &nbsp;</label>
+            <select
+              className={styles.select}
+              required
+              name="rating"
+              id="rating-input"
+              value={formData.rating}
+              onChange={handleChange}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button className={styles.btn4} type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
   )
 }
 

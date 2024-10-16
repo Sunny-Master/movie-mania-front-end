@@ -1,55 +1,59 @@
-.container2 {
-  border: solid;
-  width: 20vw;
-  height: 45vh;
+.container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+}
+
+.title2 {
+  width: 100%;
+  text-align: center;
+  background-color: whitesmoke;
+  color: #3d3151;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  margin: 0;
+}
+
+.main {
+  border: solid;
+  width: 80%;
+  min-width: 300px;
+  max-width: 500px;
   border-radius: 20px;
-  margin: auto;
-  margin-top: 5%;
-  position: relative;
+  margin: 5%;
   background-color: #3d3151;
 }
 
-.btn4 {
-  position: absolute;
-  height: 30px;
-  bottom: 10px;
-  right: 21%;
-  border-radius: 10px;
-  font-weight: bold;
-  background-color: whitesmoke;
-  font-size: 1.2vw;
+.main form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
 }
 
-.h1 {
-  position: absolute;
-  top: 3%;
-  font-size: 1.7vw;
+.btn4 {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.75rem;
+  width: 5rem;
+  padding: 0.5rem;
 }
 
 .label {
-  position: absolute;
   color: whitesmoke;
-  top: 15%;
-  left: 30%;
-  font-size: 1.5vw;
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .textarea {
-  position: absolute;
   height: 20vh;
-  width: 16vw;
-  border-radius: 5%;
-  left: 10%;
-  top: 30%;
+  width: 100%;
 }
 
 .select {
-  position: absolute;
-  top: 13%;
-  left: 55%;
-  height: 10%;
-  border-radius: 25%;
+  height: 1.75rem;
+  border-radius: 10px;
 }

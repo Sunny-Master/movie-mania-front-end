@@ -36,25 +36,35 @@ const Recommendations = ({ profile }) => {
 
   return (  
     <main className={styles.container}>
-      <h1 className={styles.line}>Movie Recommendations</h1><br />
-      <SearchForm searchResults={searchMovies} type='movie'/>
-      {!movies ? 
-        <h1 className={styles.line}>Loading Your Personalized Movies</h1>
-        : 
-        <MovieBar 
-          content={moviesResults} 
-        />
-      }
-      <h1 className={styles.line}>Favorite Movies</h1>
-      <MovieBar 
-        content={profile.favMovies} 
-        contentType='favMovies'
-      />
-      <h1 className={styles.line}>Watch List</h1>
-      <MovieBar 
-        content={profile.watchList} 
-        contentType='watchList'
-      />
+      <h1 className={styles.title2}>Movie Recommendations</h1><br />
+      <section className={styles.shadedBG}>
+        <section className={styles.top}>
+          <SearchForm searchResults={searchMovies} type='movie'/>
+          {!movies ? 
+            <h1 className={styles.loading}>Loading Your Personalized Movies...</h1>
+            : 
+            <MovieBar 
+              content={moviesResults} 
+            />
+          }
+        </section>
+        <section className={styles.twin}>
+          <div className={styles.scrollA}>
+            <h4 className={styles.line}>Favorite Movies</h4>
+            <MovieBar 
+              content={profile.favMovies} 
+              contentType='favMovies'
+            />
+          </div>
+          <div className={styles.scrollA}>
+            <h4 className={styles.line}>Watch List</h4>
+            <MovieBar 
+              content={profile.watchList} 
+              contentType='watchList'
+            />
+          </div>
+        </section>
+      </section>
     </main>
   )
 }

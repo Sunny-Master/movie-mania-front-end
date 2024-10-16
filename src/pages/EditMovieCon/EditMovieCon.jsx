@@ -26,25 +26,40 @@ const EditMovieCon = (props) => {
   if (!profile) return <h1>Loading...</h1>
 
   return (  
-    <main>
+    <main className={styles.container}>
       <h1 className={styles.title2}>Edit Movie Concept</h1>
       <section className={styles.main}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.top}>
-            <div className={styles.title}>
-              <label className={styles.plott} htmlFor="title-input">Title</label>
-              <input
-                required
-                type="text" 
-                name="title"
-                id="title-input"
-                placeholder="Movie Title"
-                value={formData.title}
+          <div className={styles.title}>
+            <label className={styles.plott} htmlFor="title-input">Title</label>
+            <input
+              required
+              type="text" 
+              name="title"
+              id="title-input"
+              placeholder="Movie Title"
+              value={formData.title}
+              onChange={handleChange}
+            />
+          </div>
+          <div className={styles.director}>
+              <label className={styles.plott} htmlFor="director-input">Director</label>
+              <select
+                name="director"
+                id="director-input"
+                value={formData.director}
                 onChange={handleChange}
-                className={styles.titleinput}
-              />
+              >
+                <option value="">Select Director</option>
+                {profile.favDirectors.map(director => 
+                  <option key={director._id} value={director.name}>
+                    {director.name}
+                  </option>
+                )}
+              </select>
             </div>
-            <div className={styles.genres2}>
+          <div className={styles.middle}>
+            <div className={styles.genres}>
               <label className={styles.plott} htmlFor="genre-input">Genres</label>
               <select
                 required
@@ -53,7 +68,7 @@ const EditMovieCon = (props) => {
                 id="genre-input"
                 value={formData.genres}
                 onChange={handleSelectChange}
-                className={styles.select2}
+                className={styles.select}
               >
                 <option value="">Select Genre</option>
                 {profile.favGenres.map(genre => 
@@ -63,8 +78,7 @@ const EditMovieCon = (props) => {
                 )}
               </select>
             </div>
-          </div>
-          <div className={styles.middle}>
+            
             <div className={styles.actor}>
               <label className={styles.plott} htmlFor="actors-input">Actors</label>
               <select
@@ -83,23 +97,6 @@ const EditMovieCon = (props) => {
               )}
               </select>
             </div>
-            <div className={styles.director}>
-              <label className={styles.plott} htmlFor="director-input">Director</label><br />
-              <select
-                name="director"
-                id="director-input"
-                value={formData.director}
-                onChange={handleChange}
-                className={styles.select}
-              >
-              <option value="">Select Director</option>
-              {profile.favDirectors.map(director => 
-                <option key={director._id} value={director.name}>
-                  {director.name}
-                </option>
-              )}
-              </select>
-            </div>
           </div>
           <div className={styles.bottom}>
             <label className={styles.plott} htmlFor="plot-input">Plot</label><br />
@@ -111,9 +108,9 @@ const EditMovieCon = (props) => {
               placeholder="Write plot here..."
               onChange={handleChange}
               className={styles.plotinput}
-            /> <br />
-            <button className={styles.btn7} type="submit">SUBMIT</button>
+            />
           </div>
+          <button className={styles.btn7} type="submit">SUBMIT</button>
         </form>
       </section>
     </main>
