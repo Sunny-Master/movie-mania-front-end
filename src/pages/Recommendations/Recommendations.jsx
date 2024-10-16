@@ -46,16 +46,22 @@ const Recommendations = ({ profile }) => {
             content={moviesResults} 
           />
         }
-        <h4 className={styles.line}>Favorite Movies</h4>
-        <MovieBar 
-          content={profile.favMovies} 
-          contentType='favMovies'
-        />
-        <h4 className={styles.line}>Watch List</h4>
-        <MovieBar 
-          content={profile.watchList} 
-          contentType='watchList'
-        />
+        <section className={styles.twin}>
+          <div className={styles.scrollA}>
+            <h4 className={styles.line}>Favorite Movies</h4>
+            <MovieBar 
+              content={profile.favMovies} 
+              contentType='favMovies'
+            />
+          </div>
+          <div className={styles.scrollA}>
+            <h4 className={styles.line}>Watch List</h4>
+            <MovieBar 
+              content={profile.watchList} 
+              contentType='watchList'
+            />
+          </div>
+        </section>
       </section>
     </main>
   )

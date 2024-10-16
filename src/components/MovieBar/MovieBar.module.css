@@ -1,5 +1,5 @@
 .scroll {
-  margin: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.45);
   padding: 0 10px 20px 10px;
   width: 100%;
   display: flex;
