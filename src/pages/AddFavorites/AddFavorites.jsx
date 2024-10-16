@@ -29,7 +29,6 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
   )
 
   const handleChange = evt => {
-    console.log(evt)
     const selectedGenre = genreList.find(genre => genre.id === parseInt(evt.target.value))
     selectedGenre.genreId = selectedGenre.id
     selectedGenre.genreName = selectedGenre.name
@@ -40,47 +39,54 @@ const AddFavorites = ({ profile, handleAddActor, handleAddDirector, handleAddGen
 
   return (  
     <main className={styles.container}>
-      <h1 className={styles.title2}>Add Favorites</h1><br />
-      <SearchForm searchResults={searchCelebs} type='celeb'/>
-      <CelebBar 
-        content={celebs} 
-        handleAddActor={ handleAddActor } 
-        handleAddDirector={ handleAddDirector } 
-      />
-      <section className={styles.twin}>
-        <div className={styles.scrollA}>
-            <h1 className={styles.line}>Favorite Actors</h1><br />
-          <CelebPole 
-            content={profile.favActors}         
-            handleRemoveCeleb={ handleRemoveCeleb }
-          />
-        </div>
-        <div className={styles.scrollB}>
-          <h1 className={styles.line}>Favorite Directors</h1><br />
-          <CelebPole  
-            content={profile.favDirectors}
-            handleRemoveCeleb={ handleRemoveCeleb }
-          />
-        </div>
-        <div className={styles.genres}>
-          <h1 className={styles.line}>Favorite Genres </h1><br />
-          <select className={styles.genre} onChange={handleChange}>
-            <option value="">Select Genre</option>
-            {genreList.map(genre => 
-              <option key={genre.id} value={genre.id}>
-                {genre.name}
-              </option>
-            )}
-          </select><br />
-          <section className={styles.wrap}>
-            {profile.favGenres.map(genre => 
-              <section className={styles.genreseach} key={genre._id}>
-                <h4 >{genre.genreName}</h4>
-                <button className={styles.btn6} onClick={() => handleRemoveGenre(genre._id)}> X </button>
-              </section>
-            )}
-          </section>
-        </div>
+      <h1 className={styles.title2}>Add Favorites</h1>
+      <section className={styles.shadedBG}>
+        <section className={styles.top}>
+          <div className={styles.genres}>
+            <h4 className={styles.line}>Favorite Genres </h4>
+            <select className={styles.genre} onChange={handleChange}>
+              <option value="">Select Genre</option>
+              {genreList.map(genre => 
+                <option key={genre.id} value={genre.id}>
+                  {genre.name}
+                </option>
+              )}
+            </select>
+            <section className={styles.wrap}>
+              {profile.favGenres.map(genre => 
+                <section className={styles.genreseach} key={genre._id}>
+                  <li >{genre.genreName}</li>
+                  <button className={styles.btn6} onClick={() => handleRemoveGenre(genre._id)}>❌</button>
+                </section>
+              )}
+            </section>
+          </div>
+          <div className={styles.search}>
+            <SearchForm searchResults={searchCelebs} type='celeb'/>
+            <CelebBar 
+              content={celebs} 
+              handleAddActor={ handleAddActor } 
+              handleAddDirector={ handleAddDirector } 
+            />
+          </div>
+        </section>
+
+        <section className={styles.twin}>
+          <div className={styles.scrollA}>
+            <h4 className={styles.line}>Favorite Actors</h4>
+            <CelebBar 
+              content={profile.favActors}         
+              handleRemoveCeleb={ handleRemoveCeleb }
+            />
+          </div>
+          <div className={styles.scrollB}>
+            <h4 className={styles.line}>Favorite Directors</h4>
+            <CelebBar  
+              content={profile.favDirectors}
+              handleRemoveCeleb={ handleRemoveCeleb }
+            />
+          </div>
+        </section>
       </section>
     </main>
   )

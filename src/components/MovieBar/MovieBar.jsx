@@ -8,7 +8,7 @@ const MovieBar = ({ content, contentType}) => {
   return ( 
     <div className={styles.scroll}>
       {!content.length ? 
-        <h1>Your added Movies will appear here..</h1>
+        <h1>Your Movies will appear here..</h1>
         :
         <>
           {content.map(movie => 
